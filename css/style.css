@@ -1,0 +1,81 @@
+:root {
+    --bgBlue: #63c5da;
+    --bgWhite: #ffffff;
+    --bgHoverWhite: #e6e0e9;
+    --buttonPurple: #574091;
+    --buttonHoverPurple: #65558f;
+    --buttonBlack: #000000;
+    --buttonHoverBlack: #2c2c2c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: var(--bgBlue);
+}
+
+button {
+    min-width: 120px;
+    min-height: 50px;
+    border: 0;
+    color: var(--bgWhite);
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.blackButton {
+    background-color: var(--buttonBlack);
+    border-radius: 7px;
+}
+
+.blackButton:hover {
+    background-color: var(--buttonHoverBlack);
+}
+
+.purpleButton {
+    background-color: var(--buttonPurple);
+    border-radius: 2em;
+}
+
+.purpleButton:hover {
+    background-color: var(--buttonHoverPurple);
+}
+
+.inpuBox {
+    display: flex;
+    align-items: center;
+    background-color: var(--bgWhite);
+    border-bottom: 1px solid var(--buttonPurple);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px 5px 0 0;
+    width: 400px;
+    height: 40px;
+    transition: 0.2s;
+}
+
+.inpuBox:hover {
+    background-color: var(--bgHoverWhite);
+}
+
+.inpuBox label {
+    margin-right: 10px;
+    white-space: nowrap;
+    min-width: 80px;
+}
+
+.inpuBox input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 1em;
+}
+  
+.inpuBox input::placeholder {
+    color: #888;
+}
