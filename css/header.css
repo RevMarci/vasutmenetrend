@@ -1,0 +1,44 @@
+header {
+    width: 100%;
+    background-color: var(--bgWhite);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+header img {
+    width: 100px;
+    margin-left: 10px;
+}
+
+header div {
+    height: 18px;
+    margin-right: 40px;
+}
+
+header a {
+    margin-left: 15px;
+    padding: 18px;
+    transition: 0.2s;
+    text-decoration: none;
+    color: var(--buttonBlack);
+    border-radius: 7px;
+}
+
+header a:has(img) {
+    padding: 0;
+}
+
+header .blackButton {
+    color: var(--bgWhite);
+}
+
+header a:hover {
+    background-color: var(--bgHoverWhite);
+}
+
+header a:has(img):hover {
+    background-color: transparent;
+}
