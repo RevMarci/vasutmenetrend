@@ -18,24 +18,33 @@ session_start();
     <?php require_once ROOT_PATH . 'shared/header.php'; ?>
 
     <div class="centerDiv">
-        <form method="POST" action="/vasutmenetrend/src/Auth/loginController.php" accept-charset="utf-8">
-            <h1>Login</h1>
+        <form method="POST" action="/vasutmenetrend/src/Auth/registerController.php" accept-charset="utf-8">
+            <h1>Regisztráció</h1>
             <div class="inpuBox">
                 <label for="email">Email:</label>
                 <input type="text" name="email">
             </div>
             <div class="inpuBox">
-                <label for="password">Jelszó:</label>
-                <input type="text" name="password">
+                <label for="name">Név:</label>
+                <input type="text" name="name">
+            </div>
+            <div class="inpuBox">
+                <label for="password1">Jelszó:</label>
+                <input type="text" name="password1">
+            </div>
+            <div class="inpuBox">
+                <label for="password2">Jelszó megint:</label>
+                <input type="text" name="password2">
             </div>
             <?php
             if (isset($_SESSION["error"])) {
                 echo "<p class='error'>" . $_SESSION["error"] . "</p>";
             }
             ?>
-            <button class="purpleButton">Belépés</button>
+            <button class="purpleButton">Regisztráció</button>
         </form>
-        <p>Nincs fiókod?<a href="register.php">Regisztráció!</a></p>
+        <p>Van fiókod? <a href="login.php">Belépés!</a></p>
+        
     </div>
 </body>
 </html>

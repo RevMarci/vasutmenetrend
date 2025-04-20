@@ -1,4 +1,7 @@
-<?php require_once ROOT_PATH . 'config.php'; ?>
+<?php
+session_start();
+require_once ROOT_PATH . 'config.php';
+?>
 
 <header>
   <a href="<?= BASE_URL ?>index.php">
@@ -7,6 +10,15 @@
   <div>
     <a href="<?= BASE_URL ?>pages/stats.php">Statisztika</a>
     <a href="<?= BASE_URL ?>pages/stations.php">Állomások</a>
-    <a class="blackButton" href="<?= BASE_URL ?>pages/login.php">Bejelentkezés</a>
+
+    <?php
+    if ($_SESSION['login'] === 'tag') {
+      echo "<a class='blackButton' href='" . BASE_URL . "pages/profile.php'>Profil</a>";
+    } elseif ($_SESSION['login'] === 'admin') {
+      echo "<a class='blackButton' href='" . BASE_URL . "pages/admin.php'>Admin</a>";
+    } else {
+      echo "<a class='blackButton' href='" . BASE_URL . "pages/login.php'>Bejelentkezés</a>";
+    }
+    ?>
   </div>
 </header>
