@@ -18,9 +18,20 @@ body {
     background-color: var(--bgBlue);
 }
 
+h1 {
+    margin-bottom: 15px;
+}
+
+.error {
+    margin: 10px 0;
+    color: rgb(230, 0, 0);
+    font-weight: bold;
+}
+
 button {
     min-width: 120px;
     min-height: 50px;
+    margin-bottom: 10px;
     border: 0;
     color: var(--bgWhite);
     transition: 0.2s;

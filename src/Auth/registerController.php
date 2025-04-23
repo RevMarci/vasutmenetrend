@@ -22,14 +22,15 @@ if ($password1 !== $password2) {
 }
 
 // TODO
-// $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+$hashedPassword = password_hash($password1, PASSWORD_DEFAULT);
+$_SESSION['error'] = "Hashed pasw: " . $hashedPassword;
 
 $sql = "INSERT INTO TAG (EMAIL, JELSZO, NEV) VALUES (:email, :jelszo, :nev)";
 
 $stid = oci_parse($conn, $sql);
 
 oci_bind_by_name($stid, ':email', $email);
-oci_bind_by_name($stid, ':jelszo', $password1);
+oci_bind_by_name($stid, ':jelszo', $hashedPassword);
 oci_bind_by_name($stid, ':nev', $name);
 
 $success = oci_execute($stid, OCI_COMMIT_ON_SUCCESS);
@@ -41,7 +42,8 @@ if (!$success) {
 
 $_SESSION['login'] = 'tag';
 $_SESSION['error'] = "";
-header("Location: ../../pages/profile.php");
+$_SESSION['success'] = "Sikeres regisztráció!";
+header("Location: ../../pages/success.php");
 exit();
 
 

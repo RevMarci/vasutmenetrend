@@ -19,7 +19,7 @@ session_start();
 
     <div class="centerDiv">
         <form method="POST" action="/vasutmenetrend/src/Auth/loginController.php" accept-charset="utf-8">
-            <h1>Login</h1>
+            <h1>Bejelentkezés</h1>
             <div class="inpuBox">
                 <label for="email">Email:</label>
                 <input type="text" name="email">

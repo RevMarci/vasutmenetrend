@@ -13,11 +13,13 @@ if ( isset($email) && isset($password) ) {
     if (login($conn, $email, $password)) {
         $_SESSION['login'] = 'tag';
         $_SESSION['error'] = "";
-        header("Location: ../../index.php");
+        $_SESSION['success'] = "Sikeres bejelentkezés!";
+        header("Location: ../../pages/success.php");
     } elseif (loginAdmin($conn, $email, $password)) {
         $_SESSION['login'] = 'admin';
         $_SESSION['error'] = "";
-        header("Location: ../../index.php");
+        $_SESSION['success'] = "Sikeres admin bejelentkezés!";
+        header("Location: ../../pages/success.php");
     } else {
         $_SESSION['error'] = "Helytelen azonosító vagy jelszó.";
         header("Location: ../../pages/login.php");
@@ -41,7 +43,7 @@ function login($conn, $email, $password) {
         return false;
     }
 
-    if ($password === $row['JELSZO']) {
+    if (password_verify($password, $row['JELSZO'])) {
         return true;
     }
 
@@ -60,7 +62,7 @@ function loginAdmin($conn, $email, $password) {
         return false;
     }
 
-    if ($password === $row['JELSZO']) {
+    if (password_verify($password, $row['JELSZO'])) {
         return true;
     }
 
