@@ -41,8 +41,14 @@ if (!$success) {
 }
 
 $_SESSION['login'] = 'tag';
+$_SESSION['userName'] = $name;
+$_SESSION['userEmail'] = $email;
 $_SESSION['error'] = "";
 $_SESSION['success'] = "Sikeres regisztráció!";
+
+oci_free_statement($stid);
+oci_close($conn);
+
 header("Location: ../../pages/success.php");
 exit();
 

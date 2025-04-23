@@ -33,20 +33,29 @@ if ( isset($email) && isset($password) ) {
 }
 
 function login($conn, $email, $password) {
-    $stid = oci_parse($conn, 'SELECT JELSZO FROM TAG WHERE EMAIL = :email');
+    $stid = oci_parse($conn, 'SELECT * FROM TAG WHERE EMAIL = :email');
     oci_bind_by_name($stid, ':email', $email);
     oci_execute($stid);
 
     $row = oci_fetch_assoc($stid);
 
     if (!$row) {
+        oci_free_statement($stid);
+        oci_close($conn);
         return false;
     }
 
     if (password_verify($password, $row['JELSZO'])) {
+        $_SESSION['userName'] = $row['NEV'];
+        $_SESSION['userEmail'] = $row['EMAIL'];
+
+        oci_free_statement($stid);
+        oci_close($conn);
         return true;
     }
 
+    oci_free_statement($stid);
+    oci_close($conn);
     return false; // shit happened
 }
 
@@ -59,12 +68,18 @@ function loginAdmin($conn, $email, $password) {
     $row = oci_fetch_assoc($stid);
 
     if (!$row) {
+        oci_free_statement($stid);
+        oci_close($conn);
         return false;
     }
 
     if (password_verify($password, $row['JELSZO'])) {
+        oci_free_statement($stid);
+        oci_close($conn);
         return true;
     }
 
+    oci_free_statement($stid);
+    oci_close($conn);
     return false; // shit happened
 }
