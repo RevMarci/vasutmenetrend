@@ -1,0 +1,65 @@
+<?php
+    echo "Itt vagyok!";
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        createMegall();
+    }
+
+
+
+    function createMegall() 
+    {
+        echo "Lefutok";
+        include __DIR__ . '/../Database/connection.php';
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $stopid = intval($_POST['stopid']);
+            $sid = intval($_POST['sid']);
+            $tnum = intval($_POST['tnum']);
+
+            $arriveTimeRaw = $_POST['arrive-time'];
+            $startTimeRaw = $_POST['start-time'];
+
+            $arriveTime = !empty($arriveTimeRaw) ? date('d-m-Y H:i:s', strtotime($arriveTimeRaw)) : null;
+            $startTime = !empty($startTimeRaw) ? date('d-m-Y H:i:s', strtotime($startTimeRaw)) : null;
+
+            // Oracle kapcsolat ellenőrzés
+            if (!$conn) {
+                $e = oci_error();
+                die("Csatlakozási hiba: " . htmlentities($e['message']));
+            }
+
+            // Az SQL így nézne ki:
+            $sql = "INSERT INTO MEGALL (ID, ALLOMAS_ID, JARAT_JARATSZAM, ERKEZES, INDULAS)
+                    VALUES (:id ,:stationid, :tnum, " .
+                    (is_null($arriveTime) ? "NULL" : "TO_DATE(:arriveTime, 'DD-MM-YYYY HH24:MI:SS')") . ", " .
+                    (is_null($startTime) ? "NULL" : "TO_DATE(:startTime, 'DD-MM-YYYY HH24:MI:SS')") .
+                    ")";
+
+            $stid = oci_parse($conn, $sql);
+
+            oci_bind_by_name($stid, ':id', $stopid);
+            oci_bind_by_name($stid, ':stationid', $sid);
+            oci_bind_by_name($stid, ':tnum', $tnum);
+
+            if (!is_null($arriveTime)) {
+                oci_bind_by_name($stid, ':arriveTime', $arriveTime);
+            }
+            if (!is_null($startTime)) {
+                oci_bind_by_name($stid, ':startTime', $startTime);
+            }
+
+            oci_execute($stid);
+
+            oci_free_statement($stid);
+            oci_close($conn);
+
+            echo "✅ Állomás és járat kapcsolata rögzítve!";
+            header('Location: ../../pages/admin.php');
+            exit();
+
+        }
+    }
+?>
+

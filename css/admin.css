@@ -1,0 +1,51 @@
+
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+h2 {
+    /*background: #F9E59B;*/
+    padding: 10px;
+    text-align: center;
+}
+
+form {
+    background-color: #FFFFFF;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"],input[type="datetime-local"], input[type="number"], select,input[type="email"]{
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+select{
+    width: 100%;
+}
+
+.felvitel {
+    background-color: #333;
+    color: #FFF;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #555;
+}

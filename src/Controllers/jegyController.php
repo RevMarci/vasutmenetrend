@@ -1,4 +1,7 @@
 <?php
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    jegyVasarlas();
+}
 
 function getTulajdonos($email) {
     include ROOT_PATH . 'src/Database/connection.php';
@@ -41,4 +44,73 @@ function getJegy($azonosito) {
     oci_free_statement($stid);
     oci_close($conn);
     return $row;
+}
+
+
+function jegyVasarlas(){
+    include __DIR__ . '/../Database/connection.php';
+    $ticketnum = intval($_POST['ticketnum']);
+    $tnum = intval($_POST['tnum']);
+    $bnum = intval($_POST['bnum']);
+    $untilTimeRaw = $_POST['until-time'];
+    $tcost = intval($_POST['tcost']);
+    $dnum = intval($_POST['dnum']);
+    $uemail = $_POST['uemail'];
+    $mode = "Bankkártya";
+
+
+    // Oracle kapcsolat ellenőrzés
+    if (!$conn) {
+        $e = oci_error();
+        die("Csatlakozási hiba: " . htmlentities($e['message']));
+    }
+
+    // Idők átalakítása
+    $untilTime = date('d-m-Y H:i:s', strtotime($_POST['until-time']));
+    $dateNow = date('d-m-Y H:i:s');
+
+   // Először a VASARLAS INSERT
+    $sql1 = "INSERT INTO VASARLAS (ID, DATUM, FIZETESI_MOD) 
+    VALUES (:bnum, TO_DATE(:datenow, 'DD-MM-YYYY HH24:MI:SS'), :paymode)";
+
+    $stid1 = oci_parse($conn, $sql1);
+
+    // Bind-olás a VASARLAS paraméterekhez
+    oci_bind_by_name($stid1, ':bnum', $bnum);
+    oci_bind_by_name($stid1, ':datenow', $dateNow);
+    oci_bind_by_name($stid1, ':paymode', $mode);
+
+    // Végrehajtás
+    oci_execute($stid1);
+
+    // Most a JEGY INSERT
+    $sql2 = "INSERT INTO JEGY (AZONOSITO, JARAT_JARATSZAM, VASARLAS_ID, ERVENYESSEG, JEGYAR, KEDVEZMENYEK_ID, TAG_EMAIL)
+    VALUES (:ticketnum, :tnum, :bnum, TO_DATE(:untilTime, 'DD-MM-YYYY HH24:MI:SS'), :tcost, :dnum, :uemail)";
+
+    $stid2 = oci_parse($conn, $sql2);
+
+    // Bind-olás a JEGY paraméterekhez
+    oci_bind_by_name($stid2, ':ticketnum', $ticketnum);
+    oci_bind_by_name($stid2, ':tnum', $tnum);
+    oci_bind_by_name($stid2, ':bnum', $bnum);
+    oci_bind_by_name($stid2, ':untilTime', $untilTime);
+    oci_bind_by_name($stid2, ':tcost', $tcost);
+    oci_bind_by_name($stid2, ':dnum', $dnum);
+    oci_bind_by_name($stid2, ':uemail', $uemail);
+
+    // Végrehajtás
+    oci_execute($stid2);
+
+    // Mindig zárd le a statementeket
+    oci_free_statement($stid1);
+    oci_free_statement($stid2);
+
+    // Zárd le a kapcsolatot
+    oci_close($conn);
+
+   
+    echo "✅ Jegy sikeresen rögzítve!";
+    header('Location: ../../pages/jegyvasarlas.php');
+    exit();
+
 }
