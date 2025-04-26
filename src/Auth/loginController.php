@@ -74,6 +74,9 @@ function loginAdmin($conn, $email, $password) {
     }
 
     if (password_verify($password, $row['JELSZO'])) {
+        $_SESSION['userName'] = $row['NEV'];
+        $_SESSION['userEmail'] = $email;
+
         oci_free_statement($stid);
         oci_close($conn);
         return true;
