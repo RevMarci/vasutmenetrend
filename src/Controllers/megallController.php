@@ -2,7 +2,13 @@
     echo "Itt vagyok!";
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        createMegall();
+        if (isset($_POST['action'])) {
+            if ($_POST['action'] === 'delete-st') {
+                deleteMegall();
+            }
+        } else {
+            createMegall();
+        }
     }
 
 
@@ -60,6 +66,22 @@
             exit();
 
         }
+    }
+
+    function deleteMegall() {
+        include __DIR__ . '/../Database/connection.php';
+
+        $azonosito = intval($_POST['stopid']);
+
+        $stid = oci_parse($conn, 'DELETE FROM MEGALL WHERE ID = :azonosito');
+        oci_bind_by_name($stid, ':azonosito', $azonosito);
+        
+        oci_execute($stid);
+
+        oci_free_statement($stid);
+        oci_close($conn);
+
+        header('Location: ../../pages/admin.php');
     }
 ?>
 

@@ -2,9 +2,14 @@
     echo "Itt vagyok!";
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        createAllomas();
+        if (isset($_POST['action'])) {
+            if ($_POST['action'] === 'delete-s') {
+                deleteAllomas();
+            }
+        } else {
+            createAllomas();
+        }
     }
-
 
 
     function createAllomas() 
@@ -17,10 +22,6 @@
             $name = $_POST['sname'];
             $place = $_POST['splace'];
             $id = $_POST['sid'];
-
-            //echo $name;
-            //echo $hely;
-            //echo $id;
 
             if (!$conn) {
                 $e = oci_error();
@@ -45,6 +46,22 @@
             echo "✅ Állomás sikeresen rögzítve!";
             header('Location: ../../pages/admin.php');
         }
+    }
+
+    function deleteAllomas() {
+        include __DIR__ . '/../Database/connection.php';
+
+        $azonosito = intval($_POST['sid']);
+
+        $stid = oci_parse($conn, 'DELETE FROM ALLOMAS WHERE ID = :azonosito');
+        oci_bind_by_name($stid, ':azonosito', $azonosito);
+        
+        oci_execute($stid);
+
+        oci_free_statement($stid);
+        oci_close($conn);
+
+        header('Location: ../../pages/admin.php');
     }
 ?>
 

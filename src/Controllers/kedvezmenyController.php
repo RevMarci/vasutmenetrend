@@ -2,7 +2,13 @@
     echo "Itt vagyok!";
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        createKedvezmeny();
+        if (isset($_POST['action'])) {
+            if ($_POST['action'] === 'delete-td') {
+                deleteKedvezmeny();
+            }
+        } else {
+            createKedvezmeny();
+        }
     }
 
 
@@ -41,6 +47,22 @@
             // Sikeres beszúrás után visszairányítás admin felületre
             header('Location: ../../pages/admin.php');
         }
+    }
+
+    function deleteKedvezmeny() {
+        include __DIR__ . '/../Database/connection.php';
+
+        $azonosito = intval($_POST['tdnum']);
+
+        $stid = oci_parse($conn, 'DELETE FROM KEDVEZMENY WHERE ID = :azonosito');
+        oci_bind_by_name($stid, ':azonosito', $azonosito);
+        
+        oci_execute($stid);
+
+        oci_free_statement($stid);
+        oci_close($conn);
+
+        header('Location: ../../pages/admin.php');
     }
 ?>
 

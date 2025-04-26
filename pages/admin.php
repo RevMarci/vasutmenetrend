@@ -115,6 +115,96 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
             
             <button class="felvitel" type="submit">Létrehozás</button>
         </form>
+
+        <form class="admin-del-form" action="../src/Controllers/adminController.php" method="POST">
+            <h2>Admin törlése</h2>
+            <label for="anum">Admin azonosítója:</label>
+            <input type="number" id="anum" name="anum" required>
+            
+            <input type="hidden" name="action" value="delete-a">
+            
+            <button class="felvitel" type="submit">Törlés</button>
+        </form>
+
+        <form class="member-del-form" action="../src/Controllers/memberController.php" method="POST">
+            <h2>Tag törlése</h2>
+            <label for="temail">Tag email címe:</label>
+            <input type="email" id="temail" name="temail" required>
+            
+            <input type="hidden" name="action" value="delete-t">
+            
+            <button class="felvitel" type="submit">Törlés</button>
+        </form>
+
+        <form class="buy-form" action="../src/Controllers/vasarlasController.php" method="POST">
+            <h2>Jegyvásárlás törlése</h2>
+            <label for="bnum">Vásárlás azonosítója:</label>
+            <input type="number" id="bnum" name="bnum" required>
+            
+            <input type="hidden" name="action" value="delete-b">
+            
+            <button class="felvitel" type="submit">Törlés</button>
+        </form>
+
+        <form class="ticket-form" action="../src/Controllers/jegyController.php" method="POST">
+            <h2>Jegy törlése</h2>
+            <label for="tnum">Jegy azonosítója:</label>
+            <input type="number" id="tnum" name="ticketnum" required>
+            
+            <input type="hidden" name="action" value="delete-t">
+            
+            <button class="felvitel" type="submit">Törlés</button>
+        </form>
+
+        <form class="locomotive-form" action="../src/Controllers/szerelvenyController.php" method="POST">
+            <h2>Szerelvény törlése</h2>
+            <label for="lnum">Mozdonyszám:</label>
+            <input type="number" id="lnum" name="lnum" required>
+            
+            <input type="hidden" name="action" value="delete-l">
+            
+            <button class="felvitel" type="submit">Törlés</button>
+        </form>
+
+        <form class="station-form" action="../src/Controllers/allomasController.php" method="POST">
+            <h2>Állomás törlése</h2>
+            <label for="station-name">Állomás azonosítója:</label>
+            <input type="text" id="sid" name="sid" required>
+
+            <input type="hidden" name="action" value="delete-s">
+            
+            <button class="felvitel" type="submit">Törlés</button>
+        </form>
+
+        <form class="tour-form" action="../src/Controllers/jaratController.php" method="POST">
+            <h2>Járat</h2>
+            <label for="tnum">Járatszám:</label>
+            <input type="number" id="tnum" name="tnum" required>
+
+            <input type="hidden" name="action" value="delete-t">
+            
+            <button class="felvitel" type="submit">Törlés</button>
+        </form>
+
+        <form class="ticket-discount-form" action="../src/Controllers/kedvezmenyController.php" method="POST">
+            <h2>Kezdvezmény eltörlése</h2>
+            <label for="tdnum">kezdvezmény azonosítója:</label>
+            <input type="number" id="tdnum" name="tdnum" required>
+
+            <input type="hidden" name="action" value="delete-td">
+            
+            <button class="felvitel" type="submit">Törlés</button>
+        </form>
+
+        <form class="station-to-tour-form" action="../src/Controllers/megallController.php" method="POST">
+            <h2>Állomás törlése útvonalról</h2>
+            <label for="stopid">Megállás azonosítója:</label>
+            <input type="number" id="stopid" name="stopid" required>
+
+            <input type="hidden" name="action" value="delete-st">
+            
+            <button class="felvitel" type="submit">Törlés</button>
+        </form>
     </div>
 </body>
 </html>

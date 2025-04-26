@@ -2,7 +2,13 @@
     echo "Itt vagyok!";
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        createJarat();
+        if (isset($_POST['action'])) {
+            if ($_POST['action'] === 'delete-t') {
+                deleteJarat();
+            }
+        } else {
+            createJarat();
+        }
     }
 
 
@@ -42,6 +48,22 @@
             echo "✅ Járat sikeresen rögzítve!";
             header('Location: ../../pages/admin.php');
         }
+    }
+
+    function deleteJarat() {
+        include __DIR__ . '/../Database/connection.php';
+
+        $azonosito = intval($_POST['tnum']);
+
+        $stid = oci_parse($conn, 'DELETE FROM JARAT WHERE JARATSZAM = :azonosito');
+        oci_bind_by_name($stid, ':azonosito', $azonosito);
+        
+        oci_execute($stid);
+
+        oci_free_statement($stid);
+        oci_close($conn);
+
+        header('Location: ../../pages/admin.php');
     }
 ?>
 

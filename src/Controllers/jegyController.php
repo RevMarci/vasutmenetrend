@@ -1,7 +1,18 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    jegyVasarlas();
+    if (isset($_POST['action'])) {
+        if ($_POST['action'] === 'delete-t') {
+            deleteJegy();
+        }
+        /*if ($_POST['action'] === 'delete-b') {
+            deleteJegy();
+        }*/
+    } else {
+        // Alapértelmezett, ha nincs megadva action
+        jegyVasarlas();
+    }
 }
+
 
 function getTulajdonos($email) {
     include ROOT_PATH . 'src/Database/connection.php';
@@ -110,7 +121,30 @@ function jegyVasarlas(){
 
    
     echo "✅ Jegy sikeresen rögzítve!";
-    header('Location: ../../pages/jegyvasarlas.php');
+    //header('Location: ../../pages/jegyvasarlas.php');
     exit();
 
+}
+
+function deleteJegy() {
+    include __DIR__ . '/../Database/connection.php';
+
+    $azonosito = intval($_POST['ticketnum']);
+
+    $stid = oci_parse($conn, 'DELETE FROM JEGY WHERE AZONOSITO = :azonosito');
+    oci_bind_by_name($stid, ':azonosito', $azonosito);
+    
+    oci_execute($stid);
+
+    /*if ($success) {
+        oci_commit($conn);
+    } else {
+        oci_rollback($conn);
+    }*/
+
+    oci_free_statement($stid);
+    oci_close($conn);
+
+    //return $success;
+    header('Location: ../../pages/admin.php');
 }
