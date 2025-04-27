@@ -6,6 +6,9 @@
             if ($_POST['action'] === 'delete-t') {
                 deleteJarat();
             }
+            if ($_POST['action'] === 'modify') {
+                modifyJarat();
+            }
         } else {
             createJarat();
         }
@@ -64,6 +67,45 @@
         oci_close($conn);
 
         header('Location: ../../pages/admin.php');
+    }
+
+    function modifyJarat() 
+    {
+        echo "Lefutok";
+        include __DIR__ . '/../Database/connection.php';
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $tnum = intval($_POST['tnum']);
+            $ttype = $_POST['ttype'];
+            $lnum = intval($_POST['lnum']);
+
+            if (!$conn) {
+                $e = oci_error();
+                die("Csatlakozási hiba: " . htmlentities($e['message']));
+            }
+
+            $sql = "UPDATE JARAT 
+            SET TIPUS = :tipus, SZERELVENY_MOZDONYSZAM = :mszam 
+            WHERE JARATSZAM = :jszam";
+
+
+            $stid = oci_parse($conn, $sql);
+
+            
+            oci_bind_by_name($stid, ':jszam', $tnum);
+            oci_bind_by_name($stid, ':tipus', $ttype);
+            oci_bind_by_name($stid, ':mszam', $lnum);
+            oci_execute($stid);
+
+            
+
+            oci_free_statement($stid);
+            oci_close($conn);
+
+            echo "✅ Járat sikeresen rögzítve!";
+            header('Location: ../../pages/admin.php');
+        }
     }
 ?>
 

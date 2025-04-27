@@ -221,15 +221,15 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
         </form>
 
         <form class="member-form" action="../src/Controllers/memberController.php" method="POST">
-            <h2>TAG adatának módosítása</h2>
-            <label for="anum">Tag email címe (akin végezni szeretnéd a módosítást):</label>
-            <input type="number" id="anum" name="anum" required>
+            <h2>Tag adatának módosítása</h2>
+            <label for="email">Tag email címe (akin végezni szeretnéd a módosítást):</label>
+            <input type="email" id="email" name="email" required>
             
             <label for="name">Tag új neve:</label>
             <input type="text" id="name" name="name" required>
 
-            <label for="email">Tag új email címe:</label>
-            <input type="email" id="email" name="email" required>
+            <label for="newmail">Tag új email címe:</label>
+            <input type="email" id="newmail" name="newmail" required>
             
             <input type="hidden" name="action" value="modify">
 
@@ -238,7 +238,7 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
 
         <form class="locomotive-form" action="../src/Controllers/szerelvenyController.php" method="POST">
             <h2>Szerelvény módosítása</h2>
-            <label for="lnum">Mozdonyszám:</label>
+            <label for="lnum">Mozdonyszám (annak a szerelvénynek, amit módosítani szeretnél):</label>
             <input type="number" id="lnum" name="lnum" required>
             
             <label for="lcapatity">Kapacitás:</label>
@@ -309,7 +309,7 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
 
         <form class="station-to-tour-form" action="../src/Controllers/megallController.php" method="POST">
             <h2>Állomás szerkesztése az útvonalon</h2>
-            <label for="stopid">Megállás azonosítója:</label>
+            <label for="stopid">Módosítandó megállás azonosítója:</label>
             <input type="number" id="stopid" name="stopid" required>
 
             <label for="sid">Létező állomás azonosítója:</label>

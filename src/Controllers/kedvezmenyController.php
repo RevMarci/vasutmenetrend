@@ -6,6 +6,9 @@
             if ($_POST['action'] === 'delete-td') {
                 deleteKedvezmeny();
             }
+            if ($_POST['action'] === 'modify') {
+                modifyKedvezmeny();
+            }
         } else {
             createKedvezmeny();
         }
@@ -63,6 +66,44 @@
         oci_close($conn);
 
         header('Location: ../../pages/admin.php');
+    }
+
+    function modifyKedvezmeny() 
+    {
+        echo "Lefutok";
+        include __DIR__ . '/../Database/connection.php';
+
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $tdNum = intval($_POST['tdnum']);
+            $tdType = $_POST['tdtype'];
+            $tdMetric = intval($_POST['tdmetric']);
+
+        
+            if (!$conn) {
+                $e = oci_error();
+                die("Csatlakozási hiba: " . htmlentities($e['message']));
+            }
+        
+            $sql = "UPDATE KEDVEZMENY 
+            SET TIPUS = :typ, MERTEKE = :metric 
+            WHERE ID = :id";
+
+        
+            $stid = oci_parse($conn, $sql);
+        
+            oci_bind_by_name($stid, ':id', $tdNum);
+            oci_bind_by_name($stid, ':typ', $tdType);
+            oci_bind_by_name($stid, ':metric', $tdMetric);
+        
+            oci_execute($stid);
+        
+            oci_free_statement($stid);
+            oci_close($conn);
+        
+            // Sikeres beszúrás után visszairányítás admin felületre
+            header('Location: ../../pages/admin.php');
+        }
     }
 ?>
 
