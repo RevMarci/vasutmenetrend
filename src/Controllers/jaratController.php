@@ -1,5 +1,4 @@
 <?php
-    echo "Itt vagyok!";
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (isset($_POST['action'])) {
@@ -106,6 +105,34 @@
             echo "✅ Járat sikeresen rögzítve!";
             header('Location: ../../pages/admin.php');
         }
+    }
+
+    function getJaratL() {
+        include ROOT_PATH . 'src/Database/connection.php';
+    
+        $stid = oci_parse($conn, 'SELECT * FROM JARAT');
+        oci_execute($stid);
+    
+        if (!oci_execute($stid)) {
+            $e = oci_error($stid);
+            return "SQL Hiba: " . $e['message'];
+        }
+        
+    
+        $rows = [];
+        while ($row = oci_fetch_assoc($stid)) {
+            $rows[] = $row;
+        }
+    
+        if (count($rows) == 0) {
+            oci_free_statement($stid);
+            oci_close($conn);
+            return null;
+        }
+    
+        oci_free_statement($stid);
+        oci_close($conn);
+        return $rows;
     }
 ?>
 

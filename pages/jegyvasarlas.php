@@ -19,6 +19,17 @@ if (session_status() == PHP_SESSION_NONE) {
 <body>
     <?php require_once '../config.php'; ?>
     <?php require_once ROOT_PATH . 'shared/header.php'; ?>
+    <?php
+        include '../src/Controllers/adminController.php';
+        include '../src/Controllers/allomasController.php';
+        include '../src/Controllers/jaratController.php';
+        include '../src/Controllers/jegyController.php';
+        include '../src/Controllers/kedvezmenyController.php';
+        include '../src/Controllers/megallController.php';
+        include '../src/Controllers/memberController.php';
+        include '../src/Controllers/szerelvenyController.php';
+        include '../src/Controllers/vasarlasController.php';
+    ?>
 
     <div class="container">
         <!--?php print_r($_SESSION) ?-->
@@ -27,8 +38,25 @@ if (session_status() == PHP_SESSION_NONE) {
             <label for="ticketnum">Jegy azonosítója:</label>
             <input type="number" id="ticketnum" name="ticketnum" required>
             
-            <label for="tnum">Létező járat száma:</label>
-            <input type="number" id="tnum" name="tnum" required>
+            <label for="tnum">Erre a járatra:</label>
+            <!--input type="number" id="tnum" name="tnum" required-->
+            <select id="tnum" name="tnum">
+                <?php
+                    $jaratok = getJaratL();
+                    if (!empty($jaratok)) {
+                        foreach ($jaratok as $jarat) {
+                            echo '<option value="' . htmlspecialchars($jarat['JARATSZAM']) . '">'
+                                . 'Járatszám: ' . htmlspecialchars($jarat['JARATSZAM']) 
+                                . ', Típus: ' . htmlspecialchars($jarat['TIPUS']) 
+                                . ', Mozdony: ' . htmlspecialchars($jarat['SZERELVENY_MOZDONYSZAM'])
+                                . '</option>';
+                        }
+                    } else {
+                        echo '<option value="">Nincs elérhető járat.</option>';
+                    }
+        
+                ?>
+            </select>
 
             <label for="bnum">Jegyvásárlás azonosítója:</label>
             <input type="number" id="bnum" name="bnum" required>
@@ -39,8 +67,23 @@ if (session_status() == PHP_SESSION_NONE) {
             <label for="tcost">Jegy ára:</label>
             <input type="number" id="tcost" name="tcost" value="600" required readonly>
 
-            <label for="dnum">Kedvezmény azonosítója:</label>
-            <input type="number" id="dnum" name="dnum" required>
+            <label for="dnum">Kedvezmény:</label>
+            <!--input type="number" id="dnum" name="dnum" required-->
+            <select id="dnum" name="dnum">
+                <?php
+                $kedvezmenyek = getKedvezmenyL();
+                if (!empty($kedvezmenyek)) {
+                    foreach ($kedvezmenyek as $kedvezmeny) {
+                        echo '<option value="' . htmlspecialchars($kedvezmeny['ID']) . '">'
+                            . htmlspecialchars($kedvezmeny['TIPUS']) . ' (' . htmlspecialchars($kedvezmeny['MERTEKE']) . '%)'
+                            . '</option>';
+                    }
+                } else {
+                    echo '<option value="">Nincs elérhető kedvezmény.</option>';
+                }
+                
+                ?>
+            </select>
 
             <label for="uemail">Email cím:</label>
             <?php echo 
