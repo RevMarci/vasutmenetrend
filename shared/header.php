@@ -1,5 +1,12 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+
+if (!isset($_SESSION['login'])) {
+  $_SESSION['login'] = '';
+}
+
 require_once ROOT_PATH . 'config.php';
 ?>
 
@@ -8,8 +15,10 @@ require_once ROOT_PATH . 'config.php';
     <img src="<?= BASE_URL ?>assets/SnailRail_logo.png" alt="">
   </a>
   <div>
+    <!--
     <a href="<?= BASE_URL ?>pages/stats.php">Statisztika</a>
     <a href="<?= BASE_URL ?>pages/stations.php">Állomások</a>
+    -->
 
     <?php
     //$_SESSION['login'] = '';

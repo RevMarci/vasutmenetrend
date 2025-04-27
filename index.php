@@ -11,6 +11,10 @@
     <?php require_once 'config.php'; ?>
     <?php require_once ROOT_PATH . 'shared/header.php'; ?>
 
+    <div class="centerDiv">
+        <h1>Jelentkezz be!</h1>
+    </div>
+<!--
     <p>alma</p>
     <button class="blackButton">Bejelnetkezés</button>
     <button class="purpleButton">Keresés</button>
@@ -22,10 +26,11 @@
         <label for="">Mikor</label>
         <input type="date" name="" id="">
     </div>
+-->
 
     <?php
 
-
+/*
 ##############################################################################################
 #######                  --- EZT A PHP-T TELJESEN KI LEHET HAGYNI ---                  #######
 #######   --- AZÉRT HAGYTAM ITT, HOGY LETUDD TESZTELNI, HOGY TUDSZ E CSATLAKOZNI ---   #######
@@ -65,7 +70,7 @@ print "</table>\n";
 oci_free_statement($stid);
 
 oci_close($conn);
-
+*/
 ?>
 
 </body>

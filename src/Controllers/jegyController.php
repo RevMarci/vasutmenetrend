@@ -14,12 +14,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-function getTulajdonos($email) {
+function getJegy($email) {
     include ROOT_PATH . 'src/Database/connection.php';
 
-    $stid = oci_parse($conn, 'SELECT * FROM TULAJDONOS WHERE TAG_EMAIL = :email');
+    $stid = oci_parse($conn, 'SELECT * FROM JEGY WHERE TAG_EMAIL = :email');
     oci_bind_by_name($stid, ':email', $email);
     oci_execute($stid);
+
+    if (!oci_execute($stid)) {
+        $e = oci_error($stid);
+        return "SQL Hiba: " . $e['message'];
+    }
+    
 
     $rows = [];
     while ($row = oci_fetch_assoc($stid)) {
@@ -36,27 +42,6 @@ function getTulajdonos($email) {
     oci_close($conn);
     return $rows;
 }
-
-function getJegy($azonosito) {
-    include ROOT_PATH . 'src/Database/connection.php';
-
-    $stid = oci_parse($conn, 'SELECT * FROM JEGY WHERE AZONOSITO = :azonosito');
-    oci_bind_by_name($stid, ':azonosito', $azonosito);
-    oci_execute($stid);
-
-    $row = oci_fetch_assoc($stid);
-
-    if (!$row) {
-        oci_free_statement($stid);
-        oci_close($conn);
-        return null;
-    }
-
-    oci_free_statement($stid);
-    oci_close($conn);
-    return $row;
-}
-
 
 function jegyVasarlas(){
     include __DIR__ . '/../Database/connection.php';

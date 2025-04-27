@@ -1,9 +1,7 @@
-<!--?php
-
-
-?-->
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['login'])) {
     header("Location: ../../index.php");

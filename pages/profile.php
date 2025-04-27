@@ -1,6 +1,8 @@
 <?php
 
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['login'])) {
     header("Location: ../../index.php");
@@ -27,9 +29,9 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
         <h1>Profil</h1>
         <p>Név: <?php echo $_SESSION['userName'] ?></p>
         <p>Email: <?php echo $_SESSION['userEmail'] ?></p>
-
+<!--
         <h2>Profilhoz tartozó jegyek:</h2>
-        <?php
+        <?php /*
         ini_set('display_errors', 1);
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
@@ -37,30 +39,34 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
 
         require_once '../src/Controllers/jegyController.php';
         
-        $rows = getTulajdonos($_SESSION['userEmail']);
+        $rows = getJegy($_SESSION['userEmail']);
+        echo '<pre>';
+print_r($rows);
+echo '</pre>';
+
         
         if ($rows === null || count($rows) === 0) {
             echo "Nincs találat.";
         } else {
             foreach ($rows as $row) {
-                $jegy = getJegy($row['JEGY_AZONOSITO']);
-
                 echo
                 '<details>
                     <summary>Jegy azonosítója: ' . $row['JEGY_AZONOSITO'] . '</summary>
                     <hr>
                     <ul>
-                        <li>Járatszám: ' . $jegy['JARAT_JARATSZAM'] . '</li>
-                        <li>Vásárlás dátuma: ' . $jegy['VASARLASI_DATUM'] . '</li>
-                        <li>Érvényesség: ' . $jegy['ERVENYESSEG'] . '</li>
-                        <li>Jegyár: ' . $jegy['JEGYAR'] . '</li>
+                        <li>Járat szám: ' . $row['JARAT_JARATSZAM'] . '</li>
+                        <li>Vásárlás szám: ' . $row['VASARLASI_ID'] . '</li>
+                        <li>Érvényesség: ' . $row['ERVENYESSEG'] . '</li>
+                        <li>Jegyár: ' . $row['JEGYAR'] . '</li>
+                        <li>Kedvezmény szám: ' . $row['KEDVEZMENYEK_ID'] . '</li>
                     </ul>
                 </details>'
                 ;
             }
         }
-
+*/
         ?>
+-->
         <a href="../src/Auth/logout.php">
             <button class="purpleButton">Kilépés</button>
         </a>
