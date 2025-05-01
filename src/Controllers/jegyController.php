@@ -25,7 +25,6 @@ function getJegy($email) {
         $e = oci_error($stid);
         return "SQL Hiba: " . $e['message'];
     }
-    
 
     $rows = [];
     while ($row = oci_fetch_assoc($stid)) {

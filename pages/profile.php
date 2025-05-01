@@ -29,9 +29,8 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
         <h1>Profil</h1>
         <p>Név: <?php echo $_SESSION['userName'] ?></p>
         <p>Email: <?php echo $_SESSION['userEmail'] ?></p>
-<!--
         <h2>Profilhoz tartozó jegyek:</h2>
-        <?php /*
+        <?php
         ini_set('display_errors', 1);
         ini_set('display_startup_errors', 1);
         error_reporting(E_ALL);
@@ -40,10 +39,11 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
         require_once '../src/Controllers/jegyController.php';
         
         $rows = getJegy($_SESSION['userEmail']);
+        /*
         echo '<pre>';
-print_r($rows);
-echo '</pre>';
-
+        print_r($rows);
+        echo '</pre>';
+        */
         
         if ($rows === null || count($rows) === 0) {
             echo "Nincs találat.";
@@ -51,11 +51,11 @@ echo '</pre>';
             foreach ($rows as $row) {
                 echo
                 '<details>
-                    <summary>Jegy azonosítója: ' . $row['JEGY_AZONOSITO'] . '</summary>
+                    <summary>Jegy azonosítója: ' . $row['AZONOSITO'] . '</summary>
                     <hr>
                     <ul>
                         <li>Járat szám: ' . $row['JARAT_JARATSZAM'] . '</li>
-                        <li>Vásárlás szám: ' . $row['VASARLASI_ID'] . '</li>
+                        <li>Vásárlás szám: ' . $row['VASARLAS_ID'] . '</li>
                         <li>Érvényesség: ' . $row['ERVENYESSEG'] . '</li>
                         <li>Jegyár: ' . $row['JEGYAR'] . '</li>
                         <li>Kedvezmény szám: ' . $row['KEDVEZMENYEK_ID'] . '</li>
@@ -64,9 +64,35 @@ echo '</pre>';
                 ;
             }
         }
-*/
         ?>
--->
+
+        <h2>Vásárlások:</h2>
+        <?php
+        require_once '../src/Controllers/jegyController.php';
+        require_once '../src/Controllers/vasarlasController.php';
+
+        $jegyRows = getJegy($_SESSION['userEmail']);
+        if ($jegyRows === null || count($rows) === 0) {
+            echo "Nincs találat.";
+        } else {
+            foreach ($jegyRows as $jegy) {
+                $vasarlasRow = getVasarlas($jegy['VASARLAS_ID']);
+                foreach ($vasarlasRow as $vasarlas) {
+                    echo
+                    '<details>
+                        <summary>Vasarlas azonosítója: ' . $vasarlas['ID'] . '</summary>
+                        <hr>
+                        <ul>
+                            <li>Vásárlás dátuma: ' . $vasarlas['DATUM'] . '</li>
+                            <li>Fizetési mód: ' . $vasarlas['FIZETESI_MOD'] . '</li>
+                        </ul>
+                    </details>'
+                    ;
+                }
+            }
+        }
+        ?>
+
         <a href="../src/Auth/logout.php">
             <button class="purpleButton">Kilépés</button>
         </a>
