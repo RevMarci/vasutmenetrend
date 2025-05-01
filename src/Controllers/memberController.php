@@ -47,7 +47,7 @@ function modifyTag() {
     oci_free_statement($stid);
     oci_close($conn);
 
-    header('Location: ../../pages/admin.php');
+    //header('Location: ../../pages/admin.php');
 }
 
 function getTagL() {

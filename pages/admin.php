@@ -34,15 +34,10 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
 
     <?php require_once ROOT_PATH . 'shared/header.php'; ?>
 
-    <p>Profil</p>
-    <?php
-    echo $_SESSION['login'];
-    ?>
-    <a href="../src/Auth/logout.php">
-        <button class="purpleButton">Kilépés</button>
-    </a>
-
     <div class="container">
+        <a href="../src/Auth/logout.php">
+            <button class="purpleButton">Kilépés</button>
+        </a>
         <form class="locomotive-form" action="../src/Controllers/szerelvenyController.php" method="POST">
             <h2>Szerelvény felvétele</h2>
             <label for="lnum">Mozdonyszám:</label>
@@ -431,7 +426,7 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
             <h2>Tag adatának módosítása</h2>
             <label for="email">Tag:</label>
             <!--input type="email" id="email" name="email" required-->
-            <select id="temail" name="temail">
+            <select id="temail" name="email">
             <?php
                     $tagok = getTagL();
                     if (!empty($tagok)) {

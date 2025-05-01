@@ -134,7 +134,7 @@ function jegyVasarlas(){
 
    
     echo "✅ Jegy sikeresen rögzítve!";
-    //header('Location: ../../pages/jegyvasarlas.php');
+    header('Location: ../../pages/jegyvasarlas.php');
     exit();
 
 }
