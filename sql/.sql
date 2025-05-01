@@ -1,5 +1,5 @@
 --------------------------------------------------------
---  File created - vasárnap-április-27-2025   
+--  File created - csütörtök-május-01-2025   
 --------------------------------------------------------
 DROP TABLE "C##Y7BRWS"."ADMIN" cascade constraints;
 DROP TABLE "C##Y7BRWS"."ALLOMAS" cascade constraints;
@@ -339,19 +339,29 @@ Insert into C##Y7BRWS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('fradista@vasut.
 REM INSERTING into C##Y7BRWS.ALLOMAS
 SET DEFINE OFF;
 Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('1','Sarkadi Cukorgyár','Sarkad');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('4','Szeged-Rókus','Szeged');
 REM INSERTING into C##Y7BRWS.JARAT
 SET DEFINE OFF;
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('111111','Interregio','333333');
 Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1','Szemely','111111');
 REM INSERTING into C##Y7BRWS.JEGY
 SET DEFINE OFF;
+Insert into C##Y7BRWS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('3','1','3',to_date('25-ÁPR.  -30','RR-MON-DD'),'600','1','ez');
+Insert into C##Y7BRWS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('4','1','4',to_date('25-MÁJ.  -22','RR-MON-DD'),'600','1','valaki@valami.hu');
+Insert into C##Y7BRWS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('5','111111','5',to_date('25-MÁJ.  -31','RR-MON-DD'),'600','1','valaki@valami.hu');
+Insert into C##Y7BRWS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('2','111111','2',to_date('25-ÁPR.  -27','RR-MON-DD'),'600','1','valaki@valami.hu');
+Insert into C##Y7BRWS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('1','1','1',to_date('25-ÁPR.  -30','RR-MON-DD'),'600','1','valaki@valami.hu');
 REM INSERTING into C##Y7BRWS.KEDVEZMENY
 SET DEFINE OFF;
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('1','Diákkedvezmény','50');
 REM INSERTING into C##Y7BRWS.MEGALL
 SET DEFINE OFF;
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('2','1','4',to_date('25-ÁPR.  -29','RR-MON-DD'),to_date('25-ÁPR.  -29','RR-MON-DD'));
 Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('1','1','1',to_date('25-MÁJ.  -04','RR-MON-DD'),to_date('25-ÁPR.  -26','RR-MON-DD'));
 REM INSERTING into C##Y7BRWS.SZERELVENY
 SET DEFINE OFF;
 Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('222222','1000');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('333333','3000');
 Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('111111','2000');
 REM INSERTING into C##Y7BRWS.TAG
 SET DEFINE OFF;
@@ -361,11 +371,17 @@ Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('szabo.peter@gmail.com','Sz
 Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('kovacs.anna@gmail.com','SzuperTitkosJelszo004!','Kovács Anna');
 Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('toth.istvan@gmail.com','SzuperTitkosJelszo005!','Tóth István');
 Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('horvath.maria@gmail.com','SzuperTitkosJelszo006!','Horváth Mária');
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('valaki@valami.hu','$2y$10$/uqGkWoD5/SKB9N/HpGvNuq/anGcFUac5gKX2LP8N6jdv7cG1RIM2','Valaki');
 Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('varga.katalin@gmail.com','SzuperTitkosJelszo008!','Varga Katalin');
 Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('balogh.gabor@gmail.com','SzuperTitkosJelszo009!','Balogh Gábor');
 Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('ez','$2y$10$F5ArhSE7nUMwALNKOvSsz.WopqN1UPOlqJRAWz0Vd1h4aHc3iltny','az');
 REM INSERTING into C##Y7BRWS.VASARLAS
 SET DEFINE OFF;
+Insert into C##Y7BRWS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('3',to_date('25-ÁPR.  -28','RR-MON-DD'),'Bankkártya');
+Insert into C##Y7BRWS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('4',to_date('25-MÁJ.  -01','RR-MON-DD'),'Bankkártya');
+Insert into C##Y7BRWS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('5',to_date('25-MÁJ.  -01','RR-MON-DD'),'Bankkártya');
+Insert into C##Y7BRWS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('1',to_date('25-ÁPR.  -28','RR-MON-DD'),'Bankkártya');
+Insert into C##Y7BRWS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-ÁPR.  -28','RR-MON-DD'),'Bankkártya');
 --------------------------------------------------------
 --  DDL for Index ADMIN_PK
 --------------------------------------------------------
