@@ -74,7 +74,7 @@ function jegyVasarlas(){
     include __DIR__ . '/../Database/connection.php';
     $ticketnum = intval($_POST['ticketnum']);
     $tnum = intval($_POST['tnum']);
-    $bnum = intval($_POST['bnum']);
+    //$bnum = intval($_POST['bnum']);
     $untilTimeRaw = $_POST['until-time'];
     $tcost = intval($_POST['tcost']);
     $dnum = intval($_POST['dnum']);
@@ -92,7 +92,14 @@ function jegyVasarlas(){
     $untilTime = date('d-m-Y H:i:s', strtotime($_POST['until-time']));
     //$dateNow = date('d-m-Y H:i:s');
 
-   // Először a VASARLAS INSERT
+    // Get vasarlas next ID - $bnum
+    $sql = 'BEGIN get_next_vasarlas_id(:next_id); END;';
+    $stid = oci_parse($conn, $sql);
+    oci_bind_by_name($stid, ':next_id', $bnum, 10);
+    oci_execute($stid);
+
+    
+    // Először a VASARLAS INSERT
     $sql1 = "INSERT INTO VASARLAS (ID, FIZETESI_MOD) 
     VALUES (:bnum, :paymode)";
 

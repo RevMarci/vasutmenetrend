@@ -58,8 +58,10 @@ if (session_status() == PHP_SESSION_NONE) {
                 ?>
             </select>
 
+            <!--
             <label for="bnum">Jegyvásárlás azonosítója:</label>
             <input type="number" id="bnum" name="bnum" required>
+            -->
 
             <label for="until-time">Érvényesség:</label>
             <input type="datetime-local" id="until-time" name="until-time" required>

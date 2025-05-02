@@ -22,8 +22,9 @@ if ($password1 !== $password2) {
 }
 
 $hashedPassword = password_hash($password1, PASSWORD_DEFAULT);
-$_SESSION['error'] = "Hashed pasw: " . $hashedPassword;
+//$_SESSION['error'] = "Hashed pasw: " . $hashedPassword;
 
+/*
 $sql = "INSERT INTO TAG (EMAIL, JELSZO, NEV) VALUES (:email, :jelszo, :nev)";
 
 $stid = oci_parse($conn, $sql);
@@ -31,6 +32,16 @@ $stid = oci_parse($conn, $sql);
 oci_bind_by_name($stid, ':email', $email);
 oci_bind_by_name($stid, ':jelszo', $hashedPassword);
 oci_bind_by_name($stid, ':nev', $name);
+
+$success = oci_execute($stid, OCI_COMMIT_ON_SUCCESS);
+*/
+
+$sql = 'BEGIN add_tag(:email, :pswrd, :name); END;';
+$stid = oci_parse($conn, $sql);
+
+oci_bind_by_name($stid, ':email', $email);
+oci_bind_by_name($stid, ':pswrd', $hashedPassword);
+oci_bind_by_name($stid, ':name', $name);
 
 $success = oci_execute($stid, OCI_COMMIT_ON_SUCCESS);
 

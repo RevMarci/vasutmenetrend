@@ -15,6 +15,8 @@ DROP TABLE "C##ALONKX"."MEGALL" cascade constraints;
 DROP TABLE "C##ALONKX"."SZERELVENY" cascade constraints;
 DROP TABLE "C##ALONKX"."TAG" cascade constraints;
 DROP TABLE "C##ALONKX"."VASARLAS" cascade constraints;
+DROP PROCEDURE "C##ALONKX"."ADD_TAG";
+DROP PROCEDURE "C##ALONKX"."GET_NEXT_VASARLAS_ID";
 --------------------------------------------------------
 --  DDL for Sequence ADMIN_SEQ
 --------------------------------------------------------
@@ -512,6 +514,37 @@ END;
 
 /
 ALTER TRIGGER "C##ALONKX"."UNIQUE_TAG_EMAIL" ENABLE;
+--------------------------------------------------------
+--  DDL for Procedure ADD_TAG
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "C##ALONKX"."ADD_TAG" (
+    n_email IN VARCHAR2,
+    n_pswrd IN VARCHAR2,
+    n_name IN VARCHAR2
+) AS
+BEGIN
+    INSERT INTO TAG (EMAIL, JELSZO, NEV)
+    VALUES (n_email, n_pswrd, n_name);
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure GET_NEXT_VASARLAS_ID
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "C##ALONKX"."GET_NEXT_VASARLAS_ID" (
+    p_next_id OUT NUMBER
+)
+AS
+BEGIN
+    SELECT NVL(MAX(ID), 0) + 1 INTO p_next_id
+    FROM VASARLAS;
+END;
+
+/
 --------------------------------------------------------
 --  Constraints for Table ALLOMAS
 --------------------------------------------------------
