@@ -1,29 +1,29 @@
 <?php
-function getAllomasMenetrenjeL() {
-        include ROOT_PATH . 'src/Database/connection.php';
-    
-        $stid = oci_parse($conn, 'SELECT * FROM JARAT,MEGALL,ALLOMAS WHERE JARAT.JARATSZAM = MEGALL.JARAT_JARATSZAM AND MEGALL.ALLOMAS_ID = ALLOMAS.ID');
-        oci_execute($stid);
-    
-        if (!oci_execute($stid)) {
-            $e = oci_error($stid);
-            return "SQL Hiba: " . $e['message'];
-        }
-        
-    
-        $rows = [];
-        while ($row = oci_fetch_assoc($stid)) {
-            $rows[] = $row;
-        }
-    
-        if (count($rows) == 0) {
-            oci_free_statement($stid);
-            oci_close($conn);
-            return null;
-        }
-    
-        oci_free_statement($stid);
-        oci_close($conn);
-        return $rows;
+require_once __DIR__ . '/../../config.php';
+
+include ROOT_PATH . 'src/Database/connection.php';
+
+if (isset($_POST['sid'])) {
+    $sid = intval($_POST['sid']);
+
+    $sql = "SELECT JARAT.JARATSZAM, MEGALL.ERKEZES, MEGALL.INDULAS
+            FROM JARAT
+            JOIN MEGALL ON JARAT.JARATSZAM = MEGALL.JARAT_JARATSZAM
+            WHERE MEGALL.ALLOMAS_ID = :sid";
+
+    $stid = oci_parse($conn, $sql);
+    oci_bind_by_name($stid, ':sid', $sid);
+    oci_execute($stid);
+
+    while ($row = oci_fetch_assoc($stid)) {
+        echo '<tr>';
+        echo '<td>' . htmlspecialchars($row['JARATSZAM']) . '</td>';
+        echo '<td>' . htmlspecialchars($row['ERKEZES']) . '</td>';
+        echo '<td>' . htmlspecialchars($row['INDULAS']) . '</td>';
+        echo '</tr>';
     }
+
+    oci_free_statement($stid);
+    oci_close($conn);
+}
 ?>

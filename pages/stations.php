@@ -43,41 +43,30 @@ if (session_status() == PHP_SESSION_NONE) {
     ?>
 
     <div class="container">
-    <label for="station-name">Állomás:</label>
-            <select id="sid" name="sid" class="js-example-basic-single">
-            <option value="">Válassz állomást...</option>
-            <?php
-                    $allomasok = getAllomasL();
-                    if (!empty($allomasok)) {
-                        foreach ($allomasok as $allomas) {
-                            echo '<option value="' . htmlspecialchars($allomas['ID']) . '">'
-                                . htmlspecialchars($allomas['NEV']) . ' (' . htmlspecialchars($allomas['HELY'] . ')')
-                                . '</option>';
-                        }
-                    } else {
-                        echo '<option value="">Nincs elérhető állomás.</option>';
-                    }
-                ?>
-            </select>
-            <br>
-            <table>
-                <thead>
-                    <tr>
-                        <td>Járat száma</td>
-                        <td>Érkezési idő</td>
-                        <td>Indulási idő</td>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
-                    $minden = getAllomasMenetrenjeL();
-                    
-                            foreach ($minden as $sor) { 
-                                echo '<tr><td>'. $sor['JARAT_JARATSZAM'].'</td><td>'.$sor['ERKEZES'].'</td><td>'.$sor['INDULAS'].'</td></tr>';
-                            }
-                ?>
-                </tbody>
-            </table>
+        <label for="sid">Állomás:</label>
+        <select id="sid" name="sid" class="js-example-basic-single">
+        <option value="">Válassz állomást...</option>
+        <?php
+            $allomasok = getAllomasL();
+            foreach ($allomasok as $allomas) {
+                echo '<option value="' . htmlspecialchars($allomas['ID']) . '">'
+                    . htmlspecialchars($allomas['NEV']) . ' (' . htmlspecialchars($allomas['HELY']) . ')</option>';
+            }
+        ?>
+        </select>
+
+        <table>
+            <thead>
+                <tr>
+                <td>Járat száma</td>
+                <td>Érkezési idő</td>
+                <td>Indulási idő</td>
+                </tr>
+            </thead>
+            <tbody id="menetrend-body">
+                <!-- Ide kerül az AJAX-szel betöltött tartalom -->
+            </tbody>
+        </table>
     </div>
 </body>
 <script>
@@ -88,5 +77,27 @@ if (session_status() == PHP_SESSION_NONE) {
     });
   });
 </script>
+<script>
+$(document).ready(function() {
+    $('#sid').change(function() {
+        let sid = $(this).val();
 
+        if (sid !== "") {
+            $.ajax({
+                url: '../src/ComplexQueries/allomasMenetrendjeL.php',
+                type: 'POST',
+                data: { sid: sid },
+                success: function(response) {
+                    $('#menetrend-body').html(response);
+                },
+                error: function() {
+                    $('#menetrend-body').html('<tr><td colspan="3">Hiba történt.</td></tr>');
+                }
+            });
+        } else {
+            $('#menetrend-body').empty();
+        }
+    });
+});
+</script>
 </html>

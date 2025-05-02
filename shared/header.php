@@ -16,9 +16,9 @@ require_once ROOT_PATH . 'config.php';
   </a>
   <div>
     <!--
-    <a href="<?= BASE_URL ?>pages/stats.php">Statisztika</a>
+    <a href="<?= BASE_URL ?>pages/stats.php">Statisztika</a>-->
     <a href="<?= BASE_URL ?>pages/stations.php">Állomások</a>
-    -->
+    
 
     <?php
     //$_SESSION['login'] = '';
