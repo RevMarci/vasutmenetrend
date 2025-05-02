@@ -61,6 +61,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <td>Járat száma</td>
                 <td>Érkezési idő</td>
                 <td>Indulási idő</td>
+                <td>Megállók száma</td>
                 </tr>
             </thead>
             <tbody id="menetrend-body">

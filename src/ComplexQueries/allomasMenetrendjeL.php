@@ -6,10 +6,18 @@ include ROOT_PATH . 'src/Database/connection.php';
 if (isset($_POST['sid'])) {
     $sid = intval($_POST['sid']);
 
-    $sql = "SELECT JARAT.JARATSZAM, MEGALL.ERKEZES, MEGALL.INDULAS
-            FROM JARAT
-            JOIN MEGALL ON JARAT.JARATSZAM = MEGALL.JARAT_JARATSZAM
-            WHERE MEGALL.ALLOMAS_ID = :sid";
+    $sql = "SELECT 
+    JARAT.JARATSZAM, 
+    MEGALL.ERKEZES, 
+    MEGALL.INDULAS, 
+    (
+        SELECT COUNT(*) 
+        FROM MEGALL M2 
+        WHERE M2.JARAT_JARATSZAM = JARAT.JARATSZAM
+    ) AS MEGALLO_SZAM
+    FROM JARAT
+    JOIN MEGALL ON JARAT.JARATSZAM = MEGALL.JARAT_JARATSZAM
+    WHERE MEGALL.ALLOMAS_ID = :sid";
 
     $stid = oci_parse($conn, $sql);
     oci_bind_by_name($stid, ':sid', $sid);
@@ -20,6 +28,7 @@ if (isset($_POST['sid'])) {
         echo '<td>' . htmlspecialchars($row['JARATSZAM']) . '</td>';
         echo '<td>' . htmlspecialchars($row['ERKEZES']) . '</td>';
         echo '<td>' . htmlspecialchars($row['INDULAS']) . '</td>';
+        echo '<td>' . htmlspecialchars($row['MEGALLO_SZAM']) . '</td>';
         echo '</tr>';
     }
 
