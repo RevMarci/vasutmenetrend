@@ -90,17 +90,17 @@ function jegyVasarlas(){
 
     // Idők átalakítása
     $untilTime = date('d-m-Y H:i:s', strtotime($_POST['until-time']));
-    $dateNow = date('d-m-Y H:i:s');
+    //$dateNow = date('d-m-Y H:i:s');
 
    // Először a VASARLAS INSERT
-    $sql1 = "INSERT INTO VASARLAS (ID, DATUM, FIZETESI_MOD) 
-    VALUES (:bnum, TO_DATE(:datenow, 'DD-MM-YYYY HH24:MI:SS'), :paymode)";
+    $sql1 = "INSERT INTO VASARLAS (ID, FIZETESI_MOD) 
+    VALUES (:bnum, :paymode)";
 
     $stid1 = oci_parse($conn, $sql1);
 
     // Bind-olás a VASARLAS paraméterekhez
     oci_bind_by_name($stid1, ':bnum', $bnum);
-    oci_bind_by_name($stid1, ':datenow', $dateNow);
+    //oci_bind_by_name($stid1, ':datenow', $dateNow);
     oci_bind_by_name($stid1, ':paymode', $mode);
 
     // Végrehajtás

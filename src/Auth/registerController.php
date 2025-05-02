@@ -21,7 +21,6 @@ if ($password1 !== $password2) {
     exit();
 }
 
-// TODO
 $hashedPassword = password_hash($password1, PASSWORD_DEFAULT);
 $_SESSION['error'] = "Hashed pasw: " . $hashedPassword;
 
@@ -37,7 +36,16 @@ $success = oci_execute($stid, OCI_COMMIT_ON_SUCCESS);
 
 if (!$success) {
     $e = oci_error($stid);
-    throw new Exception("Sikertelen regisztráció: " . $e['message']);
+    $errorMsg = $e['message'];
+
+    if (strpos($errorMsg, 'ORA-20001') !== false) {
+        $_SESSION['error'] = "Ez az e-mail cím már foglalt egy admin felhasználónál.";
+    } else {
+        $_SESSION['error'] = "Adatbázis hiba történt: " . htmlentities($errorMsg);
+    }
+
+    header("Location: ../../pages/register.php");
+    exit();
 }
 
 $_SESSION['login'] = 'tag';
