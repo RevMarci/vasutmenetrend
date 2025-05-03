@@ -18,6 +18,7 @@ require_once ROOT_PATH . 'config.php';
     <!--
     <a href="<?= BASE_URL ?>pages/stats.php">Statisztika</a>-->
     <a href="<?= BASE_URL ?>pages/stations.php">Állomások</a>
+    <a href="<?= BASE_URL ?>pages/trains.php">Járatok</a>
     
 
     <?php
@@ -27,6 +28,7 @@ require_once ROOT_PATH . 'config.php';
       echo "<a class='blackButton' href='" . BASE_URL . "pages/profile.php'>Profil</a>";
     } elseif ($_SESSION['login'] === 'admin') {
       //echo "<a href='" . BASE_URL . "pages/jegyvasarlas.php'>Jegyvásárlás</a>";
+      echo "<a href='" . BASE_URL . "pages/statistics.php'>Statisztika</a>";
       echo "<a class='blackButton' href='" . BASE_URL . "pages/admin.php'>Admin</a>";
     } else {
       echo "<a class='blackButton' href='" . BASE_URL . "pages/login.php'>Bejelentkezés</a>";
