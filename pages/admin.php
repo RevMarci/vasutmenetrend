@@ -3,8 +3,8 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 
-if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['login'])) {
-    header("Location: ../../index.php");
+if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['login']) || $_SESSION['login'] == 'tag') {
+    header("Location: ../index.php");
     exit();
 }?>
 
