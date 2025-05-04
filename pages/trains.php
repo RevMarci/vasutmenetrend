@@ -43,7 +43,7 @@ if (session_status() == PHP_SESSION_NONE) {
     ?>
 
     <div class="container">
-        <label for="sid">Állomás:</label>
+        <label for="sid">Járat:</label>
         <select id="sid" name="sid" class="js-example-basic-single">
         <option value="">Válassz állomást...</option>
         <?php
