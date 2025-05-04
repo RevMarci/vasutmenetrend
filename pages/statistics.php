@@ -106,5 +106,26 @@ error_reporting(E_ALL);
             </tr>
         </table>
     </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>Fizetesi mód</th>
+                <th>Darabszám</th>
+                <th>Összes összeg</th>
+            </tr>
+            <?php
+                include '../src/ComplexQueries/getSumJegyCostAmount.php';
+                $rows = getSumJegyCostAmount();
+                foreach ($rows as $row) {
+                    echo '<tr>
+                        <td>' . $row["FIZETESI_MOD"] . '</td>
+                        <td>' . $row["DARABSZAM"] . '</td>
+                        <td>' . $row["OSSZEG"] . '</td>
+                    </tr>';
+                }
+            ?>
+        </table>
+    </div>
 </body>
 </html>
