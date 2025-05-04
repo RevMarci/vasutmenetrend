@@ -21,21 +21,4 @@ function getTag_JegyCount() {
     }
 
     return $rows;
-/*
-echo '
-<div class="container">
-<table>
-    <tr>
-        <th>Tag email</th>
-        <th>Vásárolt jegyek száma</th>
-    </tr>';
-    while ($row = oci_fetch_assoc($stid)) {
-        echo '<tr>
-            <td>' . $row["EMAIL"] . '</td>
-            <td>' . $row["JEGYEK_SZAMA"] . '</td>
-        </tr>';
-    }
-echo '
-</table>
-<div class="container">';*/
 }
