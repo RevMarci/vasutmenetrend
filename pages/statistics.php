@@ -127,5 +127,24 @@ error_reporting(E_ALL);
             ?>
         </table>
     </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>Tag email</th>
+                <th>Utolso vásárlása</th>
+            </tr>
+            <?php
+                include '../src/ComplexQueries/getLastVasarlas.php';
+                $rows = getLastVasarlas();
+                foreach ($rows as $row) {
+                    echo '<tr>
+                        <td>' . $row["EMAIL"] . '</td>
+                        <td>' . $row["UTOLSO_VASARLAS"] . '</td>
+                    </tr>';
+                }
+            ?>
+        </table>
+    </div>
 </body>
 </html>
