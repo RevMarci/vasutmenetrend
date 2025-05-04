@@ -7,7 +7,12 @@ if (session_status() == PHP_SESSION_NONE) {
 if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['login']) || $_SESSION['login'] == 'tag') {
     header("Location: ../index.php");
     exit();
-}?>
+}
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 ?>
 
 <!DOCTYPE html>
@@ -63,5 +68,29 @@ if ($_SESSION['login'] == '' || $_SESSION['login'] == null || !isset($_SESSION['
             </tbody>
         </table>
     </div>
+
+    <?php
+    echo 'Hivas';
+    include '../src/ComplexQueries/getTag_JegyCount.php';
+    $rows = getTag_JegyCount();
+    
+    echo '
+    <div class="container">
+    <table>
+        <tr>
+            <th>Tag email</th>
+            <th>Vásárolt jegyek száma</th>
+        </tr>';
+        foreach ($rows as $row) {
+            echo '<tr>
+                <td>' . $row["EMAIL"] . '</td>
+                <td>' . $row["JEGYEK_SZAMA"] . '</td>
+            </tr>';
+        }
+    echo '
+    </table>
+    <div class="container">'
+    ?>
+    
 </body>
 </html>
