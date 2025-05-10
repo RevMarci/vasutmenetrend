@@ -35,7 +35,6 @@ error_reporting(E_ALL);
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
 </head>
-<body>
     <?php require_once '../config.php'; ?>
     <?php require_once ROOT_PATH . 'shared/header.php'; ?>
     <?php
@@ -70,7 +69,6 @@ error_reporting(E_ALL);
     </div>
 
     <?php
-    echo 'Hivas';
     include '../src/ComplexQueries/getTag_JegyCount.php';
     $rows = getTag_JegyCount();
     
@@ -91,6 +89,62 @@ error_reporting(E_ALL);
     </table>
     <div class="container">'
     ?>
-    
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>Járat legnagyobb kapacitással</th>
+            </tr>
+            <tr>
+                <td>
+                <?php
+                    include '../src/ComplexQueries/getJaratKapacitas.php';
+                    $row = getJaratKapacitas();
+                    echo $row["KAPACITAS"];
+                ?> fő
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>Fizetesi mód</th>
+                <th>Darabszám</th>
+                <th>Összes összeg</th>
+            </tr>
+            <?php
+                include '../src/ComplexQueries/getSumJegyCostAmount.php';
+                $rows = getSumJegyCostAmount();
+                foreach ($rows as $row) {
+                    echo '<tr>
+                        <td>' . $row["FIZETESI_MOD"] . '</td>
+                        <td>' . $row["DARABSZAM"] . '</td>
+                        <td>' . $row["OSSZEG"] . '</td>
+                    </tr>';
+                }
+            ?>
+        </table>
+    </div>
+
+    <div class="container">
+        <table>
+            <tr>
+                <th>Tag email</th>
+                <th>Utolso vásárlása</th>
+            </tr>
+            <?php
+                include '../src/ComplexQueries/getLastVasarlas.php';
+                $rows = getLastVasarlas();
+                foreach ($rows as $row) {
+                    echo '<tr>
+                        <td>' . $row["EMAIL"] . '</td>
+                        <td>' . $row["UTOLSO_VASARLAS"] . '</td>
+                    </tr>';
+                }
+            ?>
+        </table>
+    </div>
 </body>
 </html>

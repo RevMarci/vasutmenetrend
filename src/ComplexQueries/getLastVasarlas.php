@@ -1,12 +1,13 @@
 <?php
 
-function getTag_JegyCount() {
+function getLastVasarlas() {
     include ROOT_PATH . 'src/Database/connection.php';
 
     $stid = oci_parse($conn, '
-    SELECT t.email, COUNT(j.AZONOSITO) AS jegyek_szama
+    SELECT t.EMAIL, MAX(v.DATUM) AS utolso_vasarlas
     FROM TAG t
-    JOIN JEGY j ON t.EMAIL = j.TAG_EMAIL
+    JOIN JEGY j ON t.email = j.TAG_EMAIL
+    JOIN VASARLAS v ON j.VASARLAS_ID = v.ID
     GROUP BY t.EMAIL
     ');
 

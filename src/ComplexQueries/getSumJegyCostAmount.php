@@ -1,13 +1,13 @@
 <?php
 
-function getTag_JegyCount() {
+function getSumJegyCostAmount() {
     include ROOT_PATH . 'src/Database/connection.php';
 
     $stid = oci_parse($conn, '
-    SELECT t.email, COUNT(j.AZONOSITO) AS jegyek_szama
-    FROM TAG t
-    JOIN JEGY j ON t.EMAIL = j.TAG_EMAIL
-    GROUP BY t.EMAIL
+    SELECT v.FIZETESI_MOD, COUNT(j.azonosito) AS darabszam, SUM(j.jegyar) AS osszeg
+    FROM vasarlas v
+    JOIN JEGY j ON v.id = j.vasarlas_id
+    GROUP BY v.fizetesi_mod
     ');
 
     if (!oci_execute($stid)) {
