@@ -620,6 +620,7 @@ BEGIN
 END;
 
 
+
 /
 ALTER TRIGGER "C##Y7BRWS"."ADMIN_TRG" ENABLE;
 --------------------------------------------------------
@@ -637,6 +638,7 @@ BEGIN
 END;
 
 
+
 /
 ALTER TRIGGER "C##Y7BRWS"."ALLOMAS_TRG" ENABLE;
 --------------------------------------------------------
@@ -652,6 +654,7 @@ BEGIN
     NULL;
   END COLUMN_SEQUENCES;
 END;
+
 
 
 /
@@ -673,6 +676,7 @@ BEGIN
 END;
 
 
+
 /
 ALTER TRIGGER "C##Y7BRWS"."ALLOMAS_TRG2" ENABLE;
 --------------------------------------------------------
@@ -692,6 +696,7 @@ BEGIN
 END;
 
 
+
 /
 ALTER TRIGGER "C##Y7BRWS"."JARAT_TRG" ENABLE;
 --------------------------------------------------------
@@ -707,6 +712,7 @@ BEGIN
     NULL;
   END COLUMN_SEQUENCES;
 END;
+
 
 
 /
@@ -726,6 +732,7 @@ BEGIN
     END IF;
   END COLUMN_SEQUENCES;
 END;
+
 
 
 /
@@ -762,6 +769,7 @@ BEGIN
     NULL;
   END COLUMN_SEQUENCES;
 END;
+
 
 
 /
