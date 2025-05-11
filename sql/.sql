@@ -1,52 +1,54 @@
 --------------------------------------------------------
---  File created - péntek-május-02-2025   
+--  File created - vasárnap-május-11-2025   
 --------------------------------------------------------
-DROP SEQUENCE "C##R2KTPS"."ADMIN_SEQ";
-DROP SEQUENCE "C##R2KTPS"."ALLOMAS_SEQ2";
-DROP SEQUENCE "C##R2KTPS"."JARAT_SEQ";
-DROP SEQUENCE "C##R2KTPS"."KEDVEZMENY_SEQ";
-DROP SEQUENCE "C##R2KTPS"."MEGALL_SEQ";
-DROP TABLE "C##R2KTPS"."ADMIN" cascade constraints;
-DROP TABLE "C##R2KTPS"."ALLOMAS" cascade constraints;
-DROP TABLE "C##R2KTPS"."JARAT" cascade constraints;
-DROP TABLE "C##R2KTPS"."JEGY" cascade constraints;
-DROP TABLE "C##R2KTPS"."KEDVEZMENY" cascade constraints;
-DROP TABLE "C##R2KTPS"."MEGALL" cascade constraints;
-DROP TABLE "C##R2KTPS"."SZERELVENY" cascade constraints;
-DROP TABLE "C##R2KTPS"."TAG" cascade constraints;
-DROP TABLE "C##R2KTPS"."VASARLAS" cascade constraints;
-DROP PROCEDURE "C##R2KTPS"."ADD_TAG";
-DROP PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID";
+DROP TABLE "C##Y7BRWS"."ADMIN" cascade constraints;
+DROP TABLE "C##Y7BRWS"."ALLOMAS" cascade constraints;
+DROP TABLE "C##Y7BRWS"."JARAT" cascade constraints;
+DROP TABLE "C##Y7BRWS"."JEGY" cascade constraints;
+DROP TABLE "C##Y7BRWS"."KEDVEZMENY" cascade constraints;
+DROP TABLE "C##Y7BRWS"."MEGALL" cascade constraints;
+DROP TABLE "C##Y7BRWS"."SZERELVENY" cascade constraints;
+DROP TABLE "C##Y7BRWS"."TAG" cascade constraints;
+DROP TABLE "C##Y7BRWS"."VASARLAS" cascade constraints;
+DROP TABLE "C##Y7BRWS"."SZERELVENY" cascade constraints;
+DROP TABLE "C##Y7BRWS"."JARAT" cascade constraints;
+DROP TABLE "C##Y7BRWS"."KEDVEZMENY" cascade constraints;
+DROP TABLE "C##Y7BRWS"."TAG" cascade constraints;
+DROP TABLE "C##Y7BRWS"."VASARLAS" cascade constraints;
+DROP TABLE "C##Y7BRWS"."ALLOMAS" cascade constraints;
+DROP TABLE "C##Y7BRWS"."ADMIN" cascade constraints;
+DROP TABLE "C##Y7BRWS"."JEGY" cascade constraints;
+DROP TABLE "C##Y7BRWS"."MEGALL" cascade constraints;
 --------------------------------------------------------
 --  DDL for Sequence ADMIN_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "C##R2KTPS"."ADMIN_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+   CREATE SEQUENCE  "C##Y7BRWS"."ADMIN_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
 --------------------------------------------------------
 --  DDL for Sequence ALLOMAS_SEQ2
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "C##R2KTPS"."ALLOMAS_SEQ2"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+   CREATE SEQUENCE  "C##Y7BRWS"."ALLOMAS_SEQ2"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 21 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
 --------------------------------------------------------
 --  DDL for Sequence JARAT_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "C##R2KTPS"."JARAT_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+   CREATE SEQUENCE  "C##Y7BRWS"."JARAT_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
 --------------------------------------------------------
 --  DDL for Sequence KEDVEZMENY_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "C##R2KTPS"."KEDVEZMENY_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+   CREATE SEQUENCE  "C##Y7BRWS"."KEDVEZMENY_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
 --------------------------------------------------------
 --  DDL for Sequence MEGALL_SEQ
 --------------------------------------------------------
 
-   CREATE SEQUENCE  "C##R2KTPS"."MEGALL_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
+   CREATE SEQUENCE  "C##Y7BRWS"."MEGALL_SEQ"  MINVALUE 1 MAXVALUE 9999999999999999999999999999 INCREMENT BY 1 START WITH 1 CACHE 20 NOORDER  NOCYCLE  NOKEEP  NOSCALE  GLOBAL ;
 --------------------------------------------------------
 --  DDL for Table ADMIN
 --------------------------------------------------------
 
-  CREATE TABLE "C##R2KTPS"."ADMIN" 
+  CREATE TABLE "C##Y7BRWS"."ADMIN" 
    (	"EMAIL" VARCHAR2(255 BYTE), 
 	"JELSZO" VARCHAR2(255 BYTE), 
 	"NEV" VARCHAR2(255 BYTE), 
@@ -62,7 +64,7 @@ DROP PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID";
 --  DDL for Table ALLOMAS
 --------------------------------------------------------
 
-  CREATE TABLE "C##R2KTPS"."ALLOMAS" 
+  CREATE TABLE "C##Y7BRWS"."ALLOMAS" 
    (	"ID" NUMBER(*,0), 
 	"NEV" VARCHAR2(255 BYTE), 
 	"HELY" VARCHAR2(255 BYTE)
@@ -77,7 +79,7 @@ DROP PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID";
 --  DDL for Table JARAT
 --------------------------------------------------------
 
-  CREATE TABLE "C##R2KTPS"."JARAT" 
+  CREATE TABLE "C##Y7BRWS"."JARAT" 
    (	"JARATSZAM" NUMBER(*,0), 
 	"TIPUS" VARCHAR2(255 BYTE), 
 	"SZERELVENY_MOZDONYSZAM" NUMBER(*,0)
@@ -92,7 +94,7 @@ DROP PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID";
 --  DDL for Table JEGY
 --------------------------------------------------------
 
-  CREATE TABLE "C##R2KTPS"."JEGY" 
+  CREATE TABLE "C##Y7BRWS"."JEGY" 
    (	"AZONOSITO" NUMBER(*,0), 
 	"JARAT_JARATSZAM" NUMBER(*,0), 
 	"VASARLAS_ID" NUMBER(*,0), 
@@ -111,7 +113,7 @@ DROP PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID";
 --  DDL for Table KEDVEZMENY
 --------------------------------------------------------
 
-  CREATE TABLE "C##R2KTPS"."KEDVEZMENY" 
+  CREATE TABLE "C##Y7BRWS"."KEDVEZMENY" 
    (	"ID" NUMBER, 
 	"TIPUS" VARCHAR2(255 BYTE), 
 	"MERTEKE" NUMBER
@@ -126,7 +128,7 @@ DROP PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID";
 --  DDL for Table MEGALL
 --------------------------------------------------------
 
-  CREATE TABLE "C##R2KTPS"."MEGALL" 
+  CREATE TABLE "C##Y7BRWS"."MEGALL" 
    (	"ID" NUMBER, 
 	"JARAT_JARATSZAM" NUMBER, 
 	"ALLOMAS_ID" NUMBER, 
@@ -143,7 +145,7 @@ DROP PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID";
 --  DDL for Table SZERELVENY
 --------------------------------------------------------
 
-  CREATE TABLE "C##R2KTPS"."SZERELVENY" 
+  CREATE TABLE "C##Y7BRWS"."SZERELVENY" 
    (	"MOZDONYSZAM" NUMBER(*,0), 
 	"KAPACITAS" NUMBER
    ) SEGMENT CREATION IMMEDIATE 
@@ -157,7 +159,7 @@ DROP PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID";
 --  DDL for Table TAG
 --------------------------------------------------------
 
-  CREATE TABLE "C##R2KTPS"."TAG" 
+  CREATE TABLE "C##Y7BRWS"."TAG" 
    (	"EMAIL" VARCHAR2(255 BYTE), 
 	"JELSZO" VARCHAR2(255 BYTE), 
 	"NEV" VARCHAR2(255 BYTE)
@@ -172,7 +174,7 @@ DROP PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID";
 --  DDL for Table VASARLAS
 --------------------------------------------------------
 
-  CREATE TABLE "C##R2KTPS"."VASARLAS" 
+  CREATE TABLE "C##Y7BRWS"."VASARLAS" 
    (	"ID" NUMBER, 
 	"DATUM" DATE, 
 	"FIZETESI_MOD" VARCHAR2(20 BYTE)
@@ -183,67 +185,339 @@ DROP PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID";
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS" ;
-REM INSERTING into C##R2KTPS.ADMIN
+--------------------------------------------------------
+--  DDL for Table SZERELVENY
+--------------------------------------------------------
+
+  CREATE TABLE "C##Y7BRWS"."SZERELVENY" 
+   (	"MOZDONYSZAM" NUMBER(*,0), 
+	"KAPACITAS" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table JARAT
+--------------------------------------------------------
+
+  CREATE TABLE "C##Y7BRWS"."JARAT" 
+   (	"JARATSZAM" NUMBER(*,0), 
+	"TIPUS" VARCHAR2(255 BYTE), 
+	"SZERELVENY_MOZDONYSZAM" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table KEDVEZMENY
+--------------------------------------------------------
+
+  CREATE TABLE "C##Y7BRWS"."KEDVEZMENY" 
+   (	"ID" NUMBER, 
+	"TIPUS" VARCHAR2(255 BYTE), 
+	"MERTEKE" NUMBER
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table TAG
+--------------------------------------------------------
+
+  CREATE TABLE "C##Y7BRWS"."TAG" 
+   (	"EMAIL" VARCHAR2(255 BYTE), 
+	"JELSZO" VARCHAR2(255 BYTE), 
+	"NEV" VARCHAR2(255 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table VASARLAS
+--------------------------------------------------------
+
+  CREATE TABLE "C##Y7BRWS"."VASARLAS" 
+   (	"ID" NUMBER, 
+	"DATUM" DATE, 
+	"FIZETESI_MOD" VARCHAR2(20 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ALLOMAS
+--------------------------------------------------------
+
+  CREATE TABLE "C##Y7BRWS"."ALLOMAS" 
+   (	"ID" NUMBER(*,0), 
+	"NEV" VARCHAR2(255 BYTE), 
+	"HELY" VARCHAR2(255 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ADMIN
+--------------------------------------------------------
+
+  CREATE TABLE "C##Y7BRWS"."ADMIN" 
+   (	"EMAIL" VARCHAR2(255 BYTE), 
+	"JELSZO" VARCHAR2(255 BYTE), 
+	"NEV" VARCHAR2(255 BYTE), 
+	"ADMIN_ID" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table JEGY
+--------------------------------------------------------
+
+  CREATE TABLE "C##Y7BRWS"."JEGY" 
+   (	"AZONOSITO" NUMBER(*,0), 
+	"JARAT_JARATSZAM" NUMBER(*,0), 
+	"VASARLAS_ID" NUMBER(*,0), 
+	"ERVENYESSEG" DATE, 
+	"JEGYAR" NUMBER, 
+	"KEDVEZMENYEK_ID" NUMBER, 
+	"TAG_EMAIL" VARCHAR2(255 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MEGALL
+--------------------------------------------------------
+
+  CREATE TABLE "C##Y7BRWS"."MEGALL" 
+   (	"ID" NUMBER, 
+	"JARAT_JARATSZAM" NUMBER, 
+	"ALLOMAS_ID" NUMBER, 
+	"INDULAS" DATE, 
+	"ERKEZES" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+REM INSERTING into C##Y7BRWS.ADMIN
 SET DEFINE OFF;
-Insert into C##R2KTPS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin1@vasut.hu','$2y$10$vHfsxF5UPoSRlQO8YJa6f.NVfV8LSEyQqVRce.Fypl51WkaDZFBfG','Adminisztrátor Első','1');
-Insert into C##R2KTPS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin3@vasut.hu','Asdasdasd1!','Adminisztrátor Harmadik','3');
-Insert into C##R2KTPS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin4@vasut.hu','SzuperTitkosJelszo001@','Adminisztrátor Negyedik','4');
-Insert into C##R2KTPS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin5@vasut.hu','AdminJelszo1235!','Adminisztrátor Ötödik','5');
-Insert into C##R2KTPS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin6@vasut.hu','SzuperTitkosJelszo22!','Adminisztrátor Hatodik','6');
-Insert into C##R2KTPS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin7@vasut.hu','SzuperTitkosJelszo001!','Adminisztrátor Hetedik','7');
-Insert into C##R2KTPS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin8@vasut.hu','S+Z362V08888888','Adminisztrátor Nyolcadik','8');
-Insert into C##R2KTPS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('fradista@vasut.hu','Ferencvaros222VT!','Hajrá Ferencváros!','10');
-REM INSERTING into C##R2KTPS.ALLOMAS
+Insert into C##Y7BRWS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin1@vasut.hu','$2y$10$vHfsxF5UPoSRlQO8YJa6f.NVfV8LSEyQqVRce.Fypl51WkaDZFBfG','Adminisztrátor Első','1');
+Insert into C##Y7BRWS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin3@vasut.hu','Asdasdasd1!','Adminisztrátor Harmadik','3');
+Insert into C##Y7BRWS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin4@vasut.hu','SzuperTitkosJelszo001@','Adminisztrátor Negyedik','4');
+Insert into C##Y7BRWS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin5@vasut.hu','AdminJelszo1235!','Adminisztrátor Ötödik','5');
+Insert into C##Y7BRWS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin6@vasut.hu','SzuperTitkosJelszo22!','Adminisztrátor Hatodik','6');
+Insert into C##Y7BRWS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin7@vasut.hu','SzuperTitkosJelszo001!','Adminisztrátor Hetedik','7');
+Insert into C##Y7BRWS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('admin8@vasut.hu','S+Z362V08888888','Adminisztrátor Nyolcadik','8');
+Insert into C##Y7BRWS.ADMIN (EMAIL,JELSZO,NEV,ADMIN_ID) values ('fradista@vasut.hu','Ferencvaros222VT!','Hajrá Ferencváros!','10');
+REM INSERTING into C##Y7BRWS.ALLOMAS
 SET DEFINE OFF;
-Insert into C##R2KTPS.ALLOMAS (ID,NEV,HELY) values ('1','Sarkadi Cukorgyár','Sarkad');
-Insert into C##R2KTPS.ALLOMAS (ID,NEV,HELY) values ('4','Szeged-Rókus','Szeged');
-REM INSERTING into C##R2KTPS.JARAT
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('32','Budapest-Keleti','Budapest');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('33','Hatvan','Hatvan');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('1','Budapest-Keleti','Budapest');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('2','Szolnok','Szolnok');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('3','Kétpó','Kétpó');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('4','Mezőtúr','Mezőtúr');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('5','Gyoma','Gyomaendrőd');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('6','Mezőberény','Mezőberény');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('7','Békéscsaba','Békéscsaba');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('14','Fényes','Fényes');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('15','Gyula','Gyula');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('16','József Szanatórium','Gyula');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('17','Sarkadi Cukorgyár','Sarkad');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('18','Kötegyán','Kötegyán');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('19','Mehkerék','Mehkerék');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('20','Sarkadkeresztúr','Sarkadkeresztúr');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('21','Telekgerendás','Telekgerendás');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('22','Csorvás alsó','Csorvás');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('23','Csorvás','Csorvás');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('24','Orosházi tanyák','Orosháza');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('25','Orosháza','Orosháza');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('26','Székkutas','Székkutas');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('27','Kútvölgy','Kútvölgy');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('28','Hódmezővásárhely','Hódmezővásárhely');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('29','Hódmezővásárhelyi Népkert','Hódmezővásárhely');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('30','Szeged-Rókus','Szeged');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('31','Szeged','Szeged');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('34','Füzesabony','Füzesabony');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('35','Miskolc-Tiszai','Miskolc');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('36','Szerencs','Szerencs');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('37','Tokaj','Tokaj');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('38','Nyíregyháza','Nyíregyháza');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('39','Debrecen','Debrecen');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('40','Hajdúszoboszló','Hajdúszoboszló');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('41','Püspökladány','Püspökladány');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('42','Szolnok','Szolnok');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('43','Cegléd','Cegléd');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('44','Ferihegy','Budapest');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('45','Kőbánya-Kispest','Budapest');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('46','Zugló','Budapest');
+Insert into C##Y7BRWS.ALLOMAS (ID,NEV,HELY) values ('47','Budapest-Nyugati','Budapest');
+REM INSERTING into C##Y7BRWS.JARAT
 SET DEFINE OFF;
-Insert into C##R2KTPS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('111111','Interregio','333333');
-Insert into C##R2KTPS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1','Szemely','111111');
-REM INSERTING into C##R2KTPS.JEGY
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('111111','Interregio','333333');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1','Szemely','111111');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1001','Személy','102345');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1002','IC','112367');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1003','Gyors','123456');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1004','Személy','134579');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1005','Expressz','145321');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1009','Gyors','189012');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1010','IC','190123');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1011','Helyi','201234');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1012','Expressz','212345');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1013','Személy','223456');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1014','IC','234567');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1015','Gyors','245678');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1016','Személy','256789');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1017','Expressz','267890');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1018','IC','278901');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1019','Helyi','289012');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1020','Gyors','290123');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1021','IC','301234');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1022','Személy','312345');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1023','Gyors','323456');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1024','IC','334567');
+Insert into C##Y7BRWS.JARAT (JARATSZAM,TIPUS,SZERELVENY_MOZDONYSZAM) values ('1025','Expressz','345678');
+REM INSERTING into C##Y7BRWS.JEGY
 SET DEFINE OFF;
-Insert into C##R2KTPS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('3','1','3',to_date('25-ÁPR.  -30','RR-MON-DD'),'600','1','ez');
-Insert into C##R2KTPS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('4','1','4',to_date('25-MÁJ.  -22','RR-MON-DD'),'600','1','valaki@valami.hu');
-Insert into C##R2KTPS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('5','111111','5',to_date('25-MÁJ.  -31','RR-MON-DD'),'600','1','valaki@valami.hu');
-Insert into C##R2KTPS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('2','111111','2',to_date('25-ÁPR.  -27','RR-MON-DD'),'600','1','valaki@valami.hu');
-Insert into C##R2KTPS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('1','1','1',to_date('25-ÁPR.  -30','RR-MON-DD'),'600','1','valaki@valami.hu');
-REM INSERTING into C##R2KTPS.KEDVEZMENY
+Insert into C##Y7BRWS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('3','1','3',to_date('25-ÁPR.  -30','RR-MON-DD'),'600','1','ez');
+Insert into C##Y7BRWS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('4','1','4',to_date('25-MÁJ.  -22','RR-MON-DD'),'600','1','valaki@valami.hu');
+Insert into C##Y7BRWS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('5','111111','5',to_date('25-MÁJ.  -31','RR-MON-DD'),'600','1','valaki@valami.hu');
+Insert into C##Y7BRWS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('2','111111','2',to_date('25-ÁPR.  -27','RR-MON-DD'),'600','1','valaki@valami.hu');
+Insert into C##Y7BRWS.JEGY (AZONOSITO,JARAT_JARATSZAM,VASARLAS_ID,ERVENYESSEG,JEGYAR,KEDVEZMENYEK_ID,TAG_EMAIL) values ('1','1','1',to_date('25-ÁPR.  -30','RR-MON-DD'),'600','1','valaki@valami.hu');
+REM INSERTING into C##Y7BRWS.KEDVEZMENY
 SET DEFINE OFF;
-Insert into C##R2KTPS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('1','Diákkedvezmény','50');
-REM INSERTING into C##R2KTPS.MEGALL
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('1','Diákkedvezmény','50');
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('2','Nyugdíjas','30');
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('3','Családi','20');
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('4','Helyi kedvezmény','15');
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('5','Hűséges utas','10');
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('6','Korai foglalás','25');
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('7','Csoportos','35');
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('8','Fogyatékos','60');
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('9','Kisgyermekes','40');
+Insert into C##Y7BRWS.KEDVEZMENY (ID,TIPUS,MERTEKE) values ('10','Vasutas','70');
+REM INSERTING into C##Y7BRWS.MEGALL
 SET DEFINE OFF;
-Insert into C##R2KTPS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('2','1','4',to_date('25-ÁPR.  -29','RR-MON-DD'),to_date('25-ÁPR.  -29','RR-MON-DD'));
-Insert into C##R2KTPS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('1','1','1',to_date('25-MÁJ.  -04','RR-MON-DD'),to_date('25-ÁPR.  -26','RR-MON-DD'));
-REM INSERTING into C##R2KTPS.SZERELVENY
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('38','1004','25',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('60','1010','32',to_date('25-MÁJ.  -11','RR-MON-DD'),null);
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('1','1002','1',to_date('25-MÁJ.  -11','RR-MON-DD'),null);
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('2','1002','2',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('3','1002','3',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('4','1002','4',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('5','1002','5',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('6','1002','6',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('7','1002','7',null,to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('22','1001','14',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('23','1001','15',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('24','1001','16',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('25','1001','17',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('27','1001','18',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('28','1001','19',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('29','1001','20',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('34','1004','21',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('35','1004','22',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('36','1004','23',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('37','1004','24',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('39','1004','26',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('40','1004','27',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('41','1004','28',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('42','1004','29',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('43','1004','30',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('44','1004','31',null,to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('61','1010','46',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('62','1010','45',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('63','1010','44',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('64','1010','43',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('65','1010','42',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('66','1010','33',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('67','1010','34',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('68','1010','35',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('69','1010','36',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('70','1010','37',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('71','1010','38',to_date('25-MÁJ.  -11','RR-MON-DD'),to_date('25-MÁJ.  -11','RR-MON-DD'));
+Insert into C##Y7BRWS.MEGALL (ID,JARAT_JARATSZAM,ALLOMAS_ID,INDULAS,ERKEZES) values ('72','1010','39',null,to_date('25-MÁJ.  -11','RR-MON-DD'));
+REM INSERTING into C##Y7BRWS.SZERELVENY
 SET DEFINE OFF;
-Insert into C##R2KTPS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('222222','1000');
-Insert into C##R2KTPS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('333333','3000');
-Insert into C##R2KTPS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('111111','2000');
-REM INSERTING into C##R2KTPS.TAG
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('222222','1000');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('333333','3000');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('111111','2000');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('102345','320');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('112367','280');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('123456','150');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('134579','340');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('145321','400');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('156789','250');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('167890','310');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('178901','290');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('189012','370');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('190123','160');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('201234','210');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('212345','260');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('223456','330');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('234567','300');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('245678','190');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('256789','240');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('267890','350');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('278901','280');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('289012','220');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('290123','360');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('301234','140');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('312345','170');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('323456','380');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('334567','200');
+Insert into C##Y7BRWS.SZERELVENY (MOZDONYSZAM,KAPACITAS) values ('345678','310');
+REM INSERTING into C##Y7BRWS.TAG
 SET DEFINE OFF;
-Insert into C##R2KTPS.TAG (EMAIL,JELSZO,NEV) values ('jozan.mihaly1022@ez.hu','SzuperTitkosJelszo001!','Józan Mihály');
-Insert into C##R2KTPS.TAG (EMAIL,JELSZO,NEV) values ('nagy.eva@gmail.com','SzuperTitkosJelszo002!','Nagy Éva');
-Insert into C##R2KTPS.TAG (EMAIL,JELSZO,NEV) values ('szabo.peter@gmail.com','SzuperTitkosJelszo003!','Szabó Péter');
-Insert into C##R2KTPS.TAG (EMAIL,JELSZO,NEV) values ('kovacs.anna@gmail.com','SzuperTitkosJelszo004!','Kovács Anna');
-Insert into C##R2KTPS.TAG (EMAIL,JELSZO,NEV) values ('toth.istvan@gmail.com','SzuperTitkosJelszo005!','Tóth István');
-Insert into C##R2KTPS.TAG (EMAIL,JELSZO,NEV) values ('horvath.maria@gmail.com','SzuperTitkosJelszo006!','Horváth Mária');
-Insert into C##R2KTPS.TAG (EMAIL,JELSZO,NEV) values ('valaki@valami.hu','$2y$10$/uqGkWoD5/SKB9N/HpGvNuq/anGcFUac5gKX2LP8N6jdv7cG1RIM2','Valaki');
-Insert into C##R2KTPS.TAG (EMAIL,JELSZO,NEV) values ('varga.katalin@gmail.com','SzuperTitkosJelszo008!','Varga Katalin');
-Insert into C##R2KTPS.TAG (EMAIL,JELSZO,NEV) values ('balogh.gabor@gmail.com','SzuperTitkosJelszo009!','Balogh Gábor');
-Insert into C##R2KTPS.TAG (EMAIL,JELSZO,NEV) values ('ez','$2y$10$F5ArhSE7nUMwALNKOvSsz.WopqN1UPOlqJRAWz0Vd1h4aHc3iltny','az');
-REM INSERTING into C##R2KTPS.VASARLAS
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('jozan.mihaly1022@ez.hu','SzuperTitkosJelszo001!','Józan Mihály');
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('nagy.eva@gmail.com','SzuperTitkosJelszo002!','Nagy Éva');
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('szabo.peter@gmail.com','SzuperTitkosJelszo003!','Szabó Péter');
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('kovacs.anna@gmail.com','SzuperTitkosJelszo004!','Kovács Anna');
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('toth.istvan@gmail.com','SzuperTitkosJelszo005!','Tóth István');
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('horvath.maria@gmail.com','SzuperTitkosJelszo006!','Horváth Mária');
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('valaki@valami.hu','$2y$10$/uqGkWoD5/SKB9N/HpGvNuq/anGcFUac5gKX2LP8N6jdv7cG1RIM2','Valaki');
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('varga.katalin@gmail.com','SzuperTitkosJelszo008!','Varga Katalin');
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('balogh.gabor@gmail.com','SzuperTitkosJelszo009!','Balogh Gábor');
+Insert into C##Y7BRWS.TAG (EMAIL,JELSZO,NEV) values ('ez','$2y$10$F5ArhSE7nUMwALNKOvSsz.WopqN1UPOlqJRAWz0Vd1h4aHc3iltny','az');
+REM INSERTING into C##Y7BRWS.VASARLAS
 SET DEFINE OFF;
-Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('3',to_date('25-ÁPR.  -28','RR-MON-DD'),'Bankkártya');
-Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('4',to_date('25-MÁJ.  -01','RR-MON-DD'),'Bankkártya');
-Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('5',to_date('25-MÁJ.  -01','RR-MON-DD'),'Bankkártya');
-Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('1',to_date('25-ÁPR.  -28','RR-MON-DD'),'Bankkártya');
-Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-ÁPR.  -28','RR-MON-DD'),'Bankkártya');
+Insert into C##Y7BRWS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('3',to_date('25-ÁPR.  -28','RR-MON-DD'),'Bankkártya');
+Insert into C##Y7BRWS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('4',to_date('25-MÁJ.  -01','RR-MON-DD'),'Bankkártya');
+Insert into C##Y7BRWS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('5',to_date('25-MÁJ.  -01','RR-MON-DD'),'Bankkártya');
+Insert into C##Y7BRWS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('1',to_date('25-ÁPR.  -28','RR-MON-DD'),'Bankkártya');
+Insert into C##Y7BRWS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-ÁPR.  -28','RR-MON-DD'),'Bankkártya');
 --------------------------------------------------------
 --  DDL for Index ADMIN_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##R2KTPS"."ADMIN_PK" ON "C##R2KTPS"."ADMIN" ("EMAIL") 
+  CREATE UNIQUE INDEX "C##Y7BRWS"."ADMIN_PK" ON "C##Y7BRWS"."ADMIN" ("EMAIL") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -253,7 +527,7 @@ Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-�
 --  DDL for Index ALLOMAS_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##R2KTPS"."ALLOMAS_PK" ON "C##R2KTPS"."ALLOMAS" ("ID") 
+  CREATE UNIQUE INDEX "C##Y7BRWS"."ALLOMAS_PK" ON "C##Y7BRWS"."ALLOMAS" ("ID") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -263,7 +537,7 @@ Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-�
 --  DDL for Index JARAT_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##R2KTPS"."JARAT_PK" ON "C##R2KTPS"."JARAT" ("JARATSZAM") 
+  CREATE UNIQUE INDEX "C##Y7BRWS"."JARAT_PK" ON "C##Y7BRWS"."JARAT" ("JARATSZAM") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -273,7 +547,7 @@ Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-�
 --  DDL for Index JEGY_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##R2KTPS"."JEGY_PK" ON "C##R2KTPS"."JEGY" ("AZONOSITO") 
+  CREATE UNIQUE INDEX "C##Y7BRWS"."JEGY_PK" ON "C##Y7BRWS"."JEGY" ("AZONOSITO") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -283,7 +557,7 @@ Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-�
 --  DDL for Index KEDVEZMENY_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##R2KTPS"."KEDVEZMENY_PK" ON "C##R2KTPS"."KEDVEZMENY" ("ID") 
+  CREATE UNIQUE INDEX "C##Y7BRWS"."KEDVEZMENY_PK" ON "C##Y7BRWS"."KEDVEZMENY" ("ID") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -293,7 +567,7 @@ Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-�
 --  DDL for Index MEGALL_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##R2KTPS"."MEGALL_PK" ON "C##R2KTPS"."MEGALL" ("ID") 
+  CREATE UNIQUE INDEX "C##Y7BRWS"."MEGALL_PK" ON "C##Y7BRWS"."MEGALL" ("ID") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -303,7 +577,7 @@ Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-�
 --  DDL for Index SZERELVENY_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##R2KTPS"."SZERELVENY_PK" ON "C##R2KTPS"."SZERELVENY" ("MOZDONYSZAM") 
+  CREATE UNIQUE INDEX "C##Y7BRWS"."SZERELVENY_PK" ON "C##Y7BRWS"."SZERELVENY" ("MOZDONYSZAM") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -313,7 +587,7 @@ Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-�
 --  DDL for Index TAG_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##R2KTPS"."TAG_PK" ON "C##R2KTPS"."TAG" ("EMAIL") 
+  CREATE UNIQUE INDEX "C##Y7BRWS"."TAG_PK" ON "C##Y7BRWS"."TAG" ("EMAIL") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -323,7 +597,7 @@ Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-�
 --  DDL for Index VASARLAS_PK
 --------------------------------------------------------
 
-  CREATE UNIQUE INDEX "C##R2KTPS"."VASARLAS_PK" ON "C##R2KTPS"."VASARLAS" ("ID") 
+  CREATE UNIQUE INDEX "C##Y7BRWS"."VASARLAS_PK" ON "C##Y7BRWS"."VASARLAS" ("ID") 
   PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
@@ -333,7 +607,7 @@ Insert into C##R2KTPS.VASARLAS (ID,DATUM,FIZETESI_MOD) values ('2',to_date('25-�
 --  DDL for Trigger ADMIN_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."ADMIN_TRG" 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."ADMIN_TRG" 
 BEFORE INSERT ON ADMIN 
 FOR EACH ROW 
 BEGIN
@@ -345,13 +619,14 @@ BEGIN
   END COLUMN_SEQUENCES;
 END;
 
+
 /
-ALTER TRIGGER "C##R2KTPS"."ADMIN_TRG" ENABLE;
+ALTER TRIGGER "C##Y7BRWS"."ADMIN_TRG" ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger ALLOMAS_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."ALLOMAS_TRG" 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."ALLOMAS_TRG" 
 BEFORE INSERT ON ALLOMAS 
 FOR EACH ROW 
 BEGIN
@@ -361,13 +636,14 @@ BEGIN
   END COLUMN_SEQUENCES;
 END;
 
+
 /
-ALTER TRIGGER "C##R2KTPS"."ALLOMAS_TRG" ENABLE;
+ALTER TRIGGER "C##Y7BRWS"."ALLOMAS_TRG" ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger ALLOMAS_TRG1
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."ALLOMAS_TRG1" 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."ALLOMAS_TRG1" 
 BEFORE INSERT ON ALLOMAS 
 FOR EACH ROW 
 BEGIN
@@ -377,13 +653,14 @@ BEGIN
   END COLUMN_SEQUENCES;
 END;
 
+
 /
-ALTER TRIGGER "C##R2KTPS"."ALLOMAS_TRG1" ENABLE;
+ALTER TRIGGER "C##Y7BRWS"."ALLOMAS_TRG1" ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger ALLOMAS_TRG2
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."ALLOMAS_TRG2" 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."ALLOMAS_TRG2" 
 BEFORE INSERT ON ALLOMAS 
 FOR EACH ROW 
 BEGIN
@@ -395,13 +672,14 @@ BEGIN
   END COLUMN_SEQUENCES;
 END;
 
+
 /
-ALTER TRIGGER "C##R2KTPS"."ALLOMAS_TRG2" ENABLE;
+ALTER TRIGGER "C##Y7BRWS"."ALLOMAS_TRG2" ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger JARAT_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."JARAT_TRG" 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."JARAT_TRG" 
 BEFORE INSERT ON JARAT 
 FOR EACH ROW 
 BEGIN
@@ -413,13 +691,14 @@ BEGIN
   END COLUMN_SEQUENCES;
 END;
 
+
 /
-ALTER TRIGGER "C##R2KTPS"."JARAT_TRG" ENABLE;
+ALTER TRIGGER "C##Y7BRWS"."JARAT_TRG" ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger JEGY_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."JEGY_TRG" 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."JEGY_TRG" 
 BEFORE INSERT ON JEGY 
 FOR EACH ROW 
 BEGIN
@@ -429,13 +708,14 @@ BEGIN
   END COLUMN_SEQUENCES;
 END;
 
+
 /
-ALTER TRIGGER "C##R2KTPS"."JEGY_TRG" ENABLE;
+ALTER TRIGGER "C##Y7BRWS"."JEGY_TRG" ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger KEDVEZMENY_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."KEDVEZMENY_TRG" 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."KEDVEZMENY_TRG" 
 BEFORE INSERT ON KEDVEZMENY 
 FOR EACH ROW 
 BEGIN
@@ -447,13 +727,14 @@ BEGIN
   END COLUMN_SEQUENCES;
 END;
 
+
 /
-ALTER TRIGGER "C##R2KTPS"."KEDVEZMENY_TRG" ENABLE;
+ALTER TRIGGER "C##Y7BRWS"."KEDVEZMENY_TRG" ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger MEGALL_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."MEGALL_TRG" 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."MEGALL_TRG" 
 BEFORE INSERT ON MEGALL 
 FOR EACH ROW 
 BEGIN
@@ -465,26 +746,14 @@ BEGIN
   END COLUMN_SEQUENCES;
 END;
 
-/
-ALTER TRIGGER "C##R2KTPS"."MEGALL_TRG" ENABLE;
---------------------------------------------------------
---  DDL for Trigger SET_VASARLAS_DATE
---------------------------------------------------------
-
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."SET_VASARLAS_DATE" 
-BEFORE INSERT ON VASARLAS
-FOR EACH ROW
-BEGIN
-    :NEW.DATUM := SYSDATE;
-END;
 
 /
-ALTER TRIGGER "C##R2KTPS"."SET_VASARLAS_DATE" ENABLE;
+ALTER TRIGGER "C##Y7BRWS"."MEGALL_TRG" ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger SZERELVENY_TRG
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."SZERELVENY_TRG" 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."SZERELVENY_TRG" 
 BEFORE INSERT ON SZERELVENY 
 FOR EACH ROW 
 BEGIN
@@ -494,13 +763,14 @@ BEGIN
   END COLUMN_SEQUENCES;
 END;
 
+
 /
-ALTER TRIGGER "C##R2KTPS"."SZERELVENY_TRG" ENABLE;
+ALTER TRIGGER "C##Y7BRWS"."SZERELVENY_TRG" ENABLE;
 --------------------------------------------------------
 --  DDL for Trigger UNIQUE_TAG_EMAIL
 --------------------------------------------------------
 
-  CREATE OR REPLACE EDITIONABLE TRIGGER "C##R2KTPS"."UNIQUE_TAG_EMAIL" 
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."UNIQUE_TAG_EMAIL" 
 BEFORE INSERT ON TAG
 FOR EACH ROW
 DECLARE
@@ -512,182 +782,166 @@ BEGIN
     END IF;
 END;
 
-/
-ALTER TRIGGER "C##R2KTPS"."UNIQUE_TAG_EMAIL" ENABLE;
---------------------------------------------------------
---  DDL for Procedure ADD_TAG
---------------------------------------------------------
-set define off;
 
-  CREATE OR REPLACE EDITIONABLE PROCEDURE "C##R2KTPS"."ADD_TAG" (
-    n_email IN VARCHAR2,
-    n_pswrd IN VARCHAR2,
-    n_name IN VARCHAR2
-) AS
+/
+ALTER TRIGGER "C##Y7BRWS"."UNIQUE_TAG_EMAIL" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger SET_VASARLAS_DATE
+--------------------------------------------------------
+
+  CREATE OR REPLACE EDITIONABLE TRIGGER "C##Y7BRWS"."SET_VASARLAS_DATE" 
+BEFORE INSERT ON VASARLAS
+FOR EACH ROW
 BEGIN
-    INSERT INTO TAG (EMAIL, JELSZO, NEV)
-    VALUES (n_email, n_pswrd, n_name);
+    :NEW.DATUM := SYSDATE;
 END;
 
-/
---------------------------------------------------------
---  DDL for Procedure GET_NEXT_VASARLAS_ID
---------------------------------------------------------
-set define off;
-
-  CREATE OR REPLACE EDITIONABLE PROCEDURE "C##R2KTPS"."GET_NEXT_VASARLAS_ID" (
-    p_next_id OUT NUMBER
-)
-AS
-BEGIN
-    SELECT NVL(MAX(ID), 0) + 1 INTO p_next_id
-    FROM VASARLAS;
-END;
 
 /
---------------------------------------------------------
---  Constraints for Table ALLOMAS
---------------------------------------------------------
-
-  ALTER TABLE "C##R2KTPS"."ALLOMAS" ADD CONSTRAINT "ALLOMAS_PK" PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "C##R2KTPS"."ALLOMAS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."ALLOMAS" MODIFY ("NEV" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."ALLOMAS" MODIFY ("HELY" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table MEGALL
---------------------------------------------------------
-
-  ALTER TABLE "C##R2KTPS"."MEGALL" ADD CONSTRAINT "MEGALL_PK" PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "C##R2KTPS"."MEGALL" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."MEGALL" MODIFY ("JARAT_JARATSZAM" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."MEGALL" MODIFY ("ALLOMAS_ID" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table TAG
---------------------------------------------------------
-
-  ALTER TABLE "C##R2KTPS"."TAG" MODIFY ("EMAIL" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."TAG" MODIFY ("JELSZO" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."TAG" MODIFY ("NEV" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."TAG" ADD CONSTRAINT "TAG_PK" PRIMARY KEY ("EMAIL")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
+ALTER TRIGGER "C##Y7BRWS"."SET_VASARLAS_DATE" ENABLE;
 --------------------------------------------------------
 --  Constraints for Table ADMIN
 --------------------------------------------------------
 
-  ALTER TABLE "C##R2KTPS"."ADMIN" ADD CONSTRAINT "ADMIN_PK" PRIMARY KEY ("EMAIL")
+  ALTER TABLE "C##Y7BRWS"."ADMIN" ADD CONSTRAINT "ADMIN_PK" PRIMARY KEY ("EMAIL")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "C##R2KTPS"."ADMIN" MODIFY ("EMAIL" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."ADMIN" MODIFY ("JELSZO" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."ADMIN" MODIFY ("NEV" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."ADMIN" MODIFY ("ADMIN_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."ADMIN" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."ADMIN" MODIFY ("JELSZO" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."ADMIN" MODIFY ("NEV" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."ADMIN" MODIFY ("ADMIN_ID" NOT NULL ENABLE);
 --------------------------------------------------------
---  Constraints for Table SZERELVENY
+--  Constraints for Table ALLOMAS
 --------------------------------------------------------
 
-  ALTER TABLE "C##R2KTPS"."SZERELVENY" MODIFY ("MOZDONYSZAM" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."SZERELVENY" MODIFY ("KAPACITAS" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."SZERELVENY" ADD CONSTRAINT "SZERELVENY_PK" PRIMARY KEY ("MOZDONYSZAM")
+  ALTER TABLE "C##Y7BRWS"."ALLOMAS" ADD CONSTRAINT "ALLOMAS_PK" PRIMARY KEY ("ID")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##Y7BRWS"."ALLOMAS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."ALLOMAS" MODIFY ("NEV" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."ALLOMAS" MODIFY ("HELY" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table JARAT
 --------------------------------------------------------
 
-  ALTER TABLE "C##R2KTPS"."JARAT" ADD CONSTRAINT "JARAT_PK" PRIMARY KEY ("JARATSZAM")
+  ALTER TABLE "C##Y7BRWS"."JARAT" ADD CONSTRAINT "JARAT_PK" PRIMARY KEY ("JARATSZAM")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "C##R2KTPS"."JARAT" MODIFY ("TIPUS" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."JARAT" MODIFY ("SZERELVENY_MOZDONYSZAM" NOT NULL ENABLE);
---------------------------------------------------------
---  Constraints for Table VASARLAS
---------------------------------------------------------
-
-  ALTER TABLE "C##R2KTPS"."VASARLAS" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."VASARLAS" MODIFY ("DATUM" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."VASARLAS" MODIFY ("FIZETESI_MOD" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."VASARLAS" ADD CONSTRAINT "VASARLAS_PK" PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
---------------------------------------------------------
---  Constraints for Table KEDVEZMENY
---------------------------------------------------------
-
-  ALTER TABLE "C##R2KTPS"."KEDVEZMENY" ADD CONSTRAINT "KEDVEZMENY_PK" PRIMARY KEY ("ID")
-  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
-  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
-  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
-  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
-  TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "C##R2KTPS"."KEDVEZMENY" MODIFY ("ID" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."KEDVEZMENY" MODIFY ("TIPUS" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."KEDVEZMENY" MODIFY ("MERTEKE" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."JARAT" MODIFY ("TIPUS" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."JARAT" MODIFY ("SZERELVENY_MOZDONYSZAM" NOT NULL ENABLE);
 --------------------------------------------------------
 --  Constraints for Table JEGY
 --------------------------------------------------------
 
-  ALTER TABLE "C##R2KTPS"."JEGY" ADD CONSTRAINT "JEGY_PK" PRIMARY KEY ("AZONOSITO")
+  ALTER TABLE "C##Y7BRWS"."JEGY" ADD CONSTRAINT "JEGY_PK" PRIMARY KEY ("AZONOSITO")
   USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
   STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
   PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
   BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
   TABLESPACE "USERS"  ENABLE;
-  ALTER TABLE "C##R2KTPS"."JEGY" MODIFY ("AZONOSITO" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."JEGY" MODIFY ("JARAT_JARATSZAM" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."JEGY" MODIFY ("VASARLAS_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."JEGY" MODIFY ("ERVENYESSEG" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."JEGY" MODIFY ("JEGYAR" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."JEGY" MODIFY ("KEDVEZMENYEK_ID" NOT NULL ENABLE);
-  ALTER TABLE "C##R2KTPS"."JEGY" MODIFY ("TAG_EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."JEGY" MODIFY ("AZONOSITO" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."JEGY" MODIFY ("JARAT_JARATSZAM" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."JEGY" MODIFY ("VASARLAS_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."JEGY" MODIFY ("ERVENYESSEG" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."JEGY" MODIFY ("JEGYAR" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."JEGY" MODIFY ("KEDVEZMENYEK_ID" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."JEGY" MODIFY ("TAG_EMAIL" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table KEDVEZMENY
+--------------------------------------------------------
+
+  ALTER TABLE "C##Y7BRWS"."KEDVEZMENY" ADD CONSTRAINT "KEDVEZMENY_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##Y7BRWS"."KEDVEZMENY" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."KEDVEZMENY" MODIFY ("TIPUS" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."KEDVEZMENY" MODIFY ("MERTEKE" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table MEGALL
+--------------------------------------------------------
+
+  ALTER TABLE "C##Y7BRWS"."MEGALL" ADD CONSTRAINT "MEGALL_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+  ALTER TABLE "C##Y7BRWS"."MEGALL" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."MEGALL" MODIFY ("JARAT_JARATSZAM" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."MEGALL" MODIFY ("ALLOMAS_ID" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table SZERELVENY
+--------------------------------------------------------
+
+  ALTER TABLE "C##Y7BRWS"."SZERELVENY" MODIFY ("MOZDONYSZAM" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."SZERELVENY" MODIFY ("KAPACITAS" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."SZERELVENY" ADD CONSTRAINT "SZERELVENY_PK" PRIMARY KEY ("MOZDONYSZAM")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table TAG
+--------------------------------------------------------
+
+  ALTER TABLE "C##Y7BRWS"."TAG" MODIFY ("EMAIL" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."TAG" MODIFY ("JELSZO" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."TAG" MODIFY ("NEV" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."TAG" ADD CONSTRAINT "TAG_PK" PRIMARY KEY ("EMAIL")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table VASARLAS
+--------------------------------------------------------
+
+  ALTER TABLE "C##Y7BRWS"."VASARLAS" MODIFY ("ID" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."VASARLAS" MODIFY ("DATUM" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."VASARLAS" MODIFY ("FIZETESI_MOD" NOT NULL ENABLE);
+  ALTER TABLE "C##Y7BRWS"."VASARLAS" ADD CONSTRAINT "VASARLAS_PK" PRIMARY KEY ("ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
 --------------------------------------------------------
 --  Ref Constraints for Table JARAT
 --------------------------------------------------------
 
-  ALTER TABLE "C##R2KTPS"."JARAT" ADD CONSTRAINT "JARAT_FK_MOZDONYSZAM" FOREIGN KEY ("SZERELVENY_MOZDONYSZAM")
-	  REFERENCES "C##R2KTPS"."SZERELVENY" ("MOZDONYSZAM") ON DELETE SET NULL ENABLE;
+  ALTER TABLE "C##Y7BRWS"."JARAT" ADD CONSTRAINT "JARAT_FK_MOZDONYSZAM" FOREIGN KEY ("SZERELVENY_MOZDONYSZAM")
+	  REFERENCES "C##Y7BRWS"."SZERELVENY" ("MOZDONYSZAM") ON DELETE SET NULL ENABLE;
 --------------------------------------------------------
 --  Ref Constraints for Table JEGY
 --------------------------------------------------------
 
-  ALTER TABLE "C##R2KTPS"."JEGY" ADD CONSTRAINT "JEGY_FK_JARAT" FOREIGN KEY ("JARAT_JARATSZAM")
-	  REFERENCES "C##R2KTPS"."JARAT" ("JARATSZAM") ON DELETE CASCADE ENABLE;
-  ALTER TABLE "C##R2KTPS"."JEGY" ADD CONSTRAINT "JEGY_FK_KEDVEZMENY" FOREIGN KEY ("KEDVEZMENYEK_ID")
-	  REFERENCES "C##R2KTPS"."KEDVEZMENY" ("ID") ON DELETE SET NULL ENABLE;
-  ALTER TABLE "C##R2KTPS"."JEGY" ADD CONSTRAINT "JEGY_FK_TAG_EMAIL" FOREIGN KEY ("TAG_EMAIL")
-	  REFERENCES "C##R2KTPS"."TAG" ("EMAIL") ON DELETE CASCADE ENABLE;
-  ALTER TABLE "C##R2KTPS"."JEGY" ADD CONSTRAINT "JEGY_FK_VASARLAS" FOREIGN KEY ("AZONOSITO")
-	  REFERENCES "C##R2KTPS"."VASARLAS" ("ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##Y7BRWS"."JEGY" ADD CONSTRAINT "JEGY_FK_JARAT" FOREIGN KEY ("JARAT_JARATSZAM")
+	  REFERENCES "C##Y7BRWS"."JARAT" ("JARATSZAM") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##Y7BRWS"."JEGY" ADD CONSTRAINT "JEGY_FK_KEDVEZMENY" FOREIGN KEY ("KEDVEZMENYEK_ID")
+	  REFERENCES "C##Y7BRWS"."KEDVEZMENY" ("ID") ON DELETE SET NULL ENABLE;
+  ALTER TABLE "C##Y7BRWS"."JEGY" ADD CONSTRAINT "JEGY_FK_TAG_EMAIL" FOREIGN KEY ("TAG_EMAIL")
+	  REFERENCES "C##Y7BRWS"."TAG" ("EMAIL") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##Y7BRWS"."JEGY" ADD CONSTRAINT "JEGY_FK_VASARLAS" FOREIGN KEY ("AZONOSITO")
+	  REFERENCES "C##Y7BRWS"."VASARLAS" ("ID") ON DELETE CASCADE ENABLE;
 --------------------------------------------------------
 --  Ref Constraints for Table MEGALL
 --------------------------------------------------------
 
-  ALTER TABLE "C##R2KTPS"."MEGALL" ADD CONSTRAINT "MEGALL_FK_ALLOMAS" FOREIGN KEY ("ALLOMAS_ID")
-	  REFERENCES "C##R2KTPS"."ALLOMAS" ("ID") ON DELETE CASCADE ENABLE;
-  ALTER TABLE "C##R2KTPS"."MEGALL" ADD CONSTRAINT "MEGALL_FK_JARAT" FOREIGN KEY ("JARAT_JARATSZAM")
-	  REFERENCES "C##R2KTPS"."JARAT" ("JARATSZAM") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##Y7BRWS"."MEGALL" ADD CONSTRAINT "MEGALL_FK_ALLOMAS" FOREIGN KEY ("ALLOMAS_ID")
+	  REFERENCES "C##Y7BRWS"."ALLOMAS" ("ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "C##Y7BRWS"."MEGALL" ADD CONSTRAINT "MEGALL_FK_JARAT" FOREIGN KEY ("JARAT_JARATSZAM")
+	  REFERENCES "C##Y7BRWS"."JARAT" ("JARATSZAM") ON DELETE CASCADE ENABLE;
