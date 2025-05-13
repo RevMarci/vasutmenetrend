@@ -32,11 +32,11 @@ if (session_status() == PHP_SESSION_NONE) {
             </div>
             <div class="inpuBox">
                 <label for="password1">Jelszó:</label>
-                <input type="text" name="password1">
+                <input type="password" name="password1">
             </div>
             <div class="inpuBox">
                 <label for="password2">Jelszó megint:</label>
-                <input type="text" name="password2">
+                <input type="password" name="password2">
             </div>
             <?php
             if (isset($_SESSION["error"])) {
