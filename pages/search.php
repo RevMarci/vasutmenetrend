@@ -17,23 +17,12 @@ function formatDateTime($oracleDateTime) {
 
 $results = [];
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // 3a. INSERT új állomás (ha van új név/hely mező)
-    if (!empty($_POST['new_name']) && !empty($_POST['new_place'])) {
-        $insSql = "INSERT INTO ALLOMAS (NEV, HELY) VALUES (:n, :p)";
-        $si = oci_parse($conn, $insSql);
-        oci_bind_by_name($si, ":n", $_POST['new_name']);
-        oci_bind_by_name($si, ":p", $_POST['new_place']);
-        oci_execute($si);
-        oci_free_statement($si);
-    }
+
 
     $ind = $_POST['indulas'] ?? null;
     $cel = $_POST['cel'] ?? null;
     if ($ind && $cel) {
-        // Debug információ
-        echo "<!-- Keresés indítva: $ind → $cel -->";
 
-        // Változtassuk meg az Oracle NLS_DATE_FORMAT beállítását
         $setNlsFormat = "ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS'";
         $stmtFormat = oci_parse($conn, $setNlsFormat);
         oci_execute($stmtFormat);
@@ -115,13 +104,11 @@ ORDER BY
         oci_bind_by_name($st, ":p_indulasi_allomas", $ind);
         oci_bind_by_name($st, ":p_erkezesi_allomas", $cel);
 
-        // Debug információ
-        echo "<!-- SQL paraméterek: $ind, $cel -->";
 
         $r = oci_execute($st);
         if (!$r) {
             $e = oci_error($st);
-            echo "<!-- SQL hiba: " . htmlentities($e['message']) . " -->";
+            // echo " " . htmlentities($e['message']) . " ";
         }
 
         while ($row = oci_fetch_assoc($st)) {
