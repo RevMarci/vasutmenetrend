@@ -18,7 +18,6 @@ require_once ROOT_PATH . 'config.php';
     <!--
     <a href="<?= BASE_URL ?>pages/stats.php">Statisztika</a>-->
     <a href="<?= BASE_URL ?>pages/stations.php">Állomások</a>
-    <a href="<?= BASE_URL ?>pages/trains.php">Járatok</a>
     <a href="<?= BASE_URL ?>pages/search.php">Vonatkereső </a>
 
     
